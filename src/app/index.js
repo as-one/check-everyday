@@ -1,5 +1,5 @@
-import loadHtml from './lib/FetchHTML.js';
-import Router from './lib/Router.js';
+import loadHtml from '../../node_modules/@as-one/components/libs/FetchHtml/FetchHtml.js';
+import Router from '../../node_modules/@as-one/components/libs/Router/Router.js';
 
 const router = new Router({
   mode: 'hash',
