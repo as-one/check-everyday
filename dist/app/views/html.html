@@ -1,0 +1,790 @@
+<pre>
+  <div class="" id="html5">
+    <h2>HTML 5</h2>
+    <hr>
+
+    <script>
+      highlightXml({
+        title: 'Doctype',
+        showUse: false,
+        code: `&lt;!DOCTYPE html&gt;`,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Headings',
+        code: `
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>`,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Paragraphs',
+        code: `<p>This is a paragraph</p>`,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Text Formatting',
+        code: `
+      <p>There is a <strong>Bold text here</strong> here</p>
+      <p>There is a <b>Bold text here</b> here</p>
+      <p>There is a <em>Italicized text here</em> here</p>
+      <p>There is a <i>Italicized text here</i> here</p>
+      <p>There is a <abbr title="Hypertext Markup Language">HTML!</abbr> here</p>
+      <p>There is a <ins>New Text</ins> here</p>
+      <p>There is a <del>Deleted Text</del> here</p>
+      <p>There is a <s>Struck-through text</s> here</p>
+      <p>There is a <sup>Superscript text</sup> here</p>
+      <p>There is a <sub>Subscript text</sub> here</p>
+      `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Anchors and Hyperlinks',
+        code: `
+      <a href="http://www.example.com">Link to example.com</a>
+      <br>
+                  <a href="#heading1">Go to Heading 1</a>
+                  <h1 id="heading1">Heading 1</h1>
+                  <a href="/about">About</a>
+      <br>
+                  <a href="tel:112233445566">Call Us</a>
+      <br>
+                  <a href="http://www.example.com" target="_blank">Open in new tab</a>
+      <br>
+                  <a href="#!" onclick="alert('Alert!')">Run JavaScript function</a>
+      <br>
+                  <a href="mailto:example@example.com">Send email</a>
+    `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Lists',
+        code: `
+      <ol>
+        <li>Item</li>
+        <li>Another item</li>
+        <li>Yet another item</li>
+      </ol>
+      <ul>
+        <li>Item</li>
+        <li>Another item</li>
+        <li>Yet another item</li>
+      </ul>
+      <ol>
+        <li>Item</li>
+        <li>Another item</li>
+        <li>Yet another item</li>
+        <li>
+          <ul>
+            <li>Item</li>
+            <li>Another item</li>
+            <li>Yet another item</li>
+          </ul>
+        </li>
+      </ol>
+      <dl>
+        <dt>Name 1</dt>
+        <dd>Value for 1</dd>
+        <dt>Name 2</dt>
+        <dd>Value for 2</dd>
+      </dl>
+    `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Tables',
+        code: `
+      <table border="1">
+        <caption>Table Title</caption>
+        <thead>
+          <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A1</td>
+            <td>B1</td>
+            <td>C1</td>
+            <td>D1</td>
+          </tr>
+          <tr>
+            <td>A2</td>
+            <td>B2</td>
+            <td>C2</td>
+            <td>D2</td>
+          </tr>
+          <tr>
+            <td>A3</td>
+            <td>B3</td>
+            <td>C3</td>
+            <td>D3</td>
+          </tr>
+          <tr>
+            <td>A4</td>
+            <td colspan="3">B4</td>
+          </tr>
+          <tr>
+            <td rowspan="2">A5</td>
+            <td>B5</td>
+            <td>C5</td>
+            <td>D5</td>
+          </tr>
+          <tr>
+            <td>B6</td>
+            <td>C6</td>
+            <td>D6</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>AF</td>
+            <td>BF</td>
+            <td>CF</td>
+            <td>DF</td>
+          </tr>
+        </tfoot>
+      </table>
+    `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Comments',
+        showUse: false,
+        code: `
+      &lt;!-- I'm an HTML comment --&gt;`,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Classes and IDs',
+        showUse: false,
+        code: `
+      &lt;div class="example-class"&gt;&lt;/div&gt;
+      &lt;div id="example-id"&gt;&lt;/div&gt;
+      &lt;style&gt;
+      .example-class {}
+      #example-id {}
+      &lt;/style>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Linking Resources',
+        showUse: false,
+        code: `
+      JavaScript:   &lt;script src="example.min.js"&gt;&lt;script&gt;
+      CSS:          &lt;link rel="stylesheet" href="example.min.css"&gt;
+      Favicon:      &lt;link rel="icon" type="image/png" href="/favicon.png"&gt;
+      Favicon:      &lt;link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"&gt;
+      CSS to print: &lt;link rel="stylesheet" href="test.css" media="print"&gt;
+      RSS:          &lt;link rel="alternate" type="application/rss+xml" href="http://example.com/feed.xml" /&gt;
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Include JavaScript code in HTML',
+        showUse: false,
+        code: `
+      &lt;script src="example.js"&gt;&lt;/script&gt;
+      &lt;script&gt;
+                  // JavaScript code
+      &lt;/script&gt;
+      &lt;noscript&gt;This browser does not support Javascript.&lt;/noscript&gt;
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Using HTML with CSS',
+        showUse: false,
+        code: `
+      &lt;head&gt;
+        &lt;link rel="stylesheet" type="text/css" href="general.css"&gt;
+        &lt;link rel="stylesheet" type="text/css" href="specific.css"&gt;
+        &lt;style type="text/css"&gt;
+          body {
+            background-color: gray;
+          }
+          &lt;/style&gt;
+          &lt;style type="text/css"&gt;
+          .specific {
+            background-color: red;
+          }
+          &lt;/style&gt;
+      &lt;/head&gt;
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Images',
+        showUse: false,
+        code: `
+      <img src="hello.img" alt="Hello">
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Input',
+        code: `
+      <label>Type: text</label>
+      <input type="text">
+      <br>
+      <label>Type: checkbox</label>
+      <input type="checkbox">
+      <br>
+      <label>Type: radio</label>
+      <input type="radio">
+      <br>
+      <label>Type: checkbox</label>
+      <input type="checkbox" checked>
+      <br>
+      <label>Type: radio</label>
+      <input type="radio" checked>
+      <br>
+      <label>Type: color</label>
+      <input type="color">
+      <br>
+      <label>Type: password</label>
+      <input type="password">
+      <br>
+      <label>Type: file</label>
+      <input type="file">
+      <br>
+      <label>Type: button</label>
+      <input type="button" value="Button">
+      <br>
+      <label>Type: submit</label>
+      <input type="submit" value="Submit">
+      <br>
+      <label>Type: reset</label>
+      <input type="reset" value="Reset">
+      <br>
+      <label>Type: hidden</label>
+      <input type="hidden">
+      <br>
+      <label>Type: tel</label>
+      <input type="tel" value="+15544332211">
+      <br>
+      <label>Type: checkbox</label>
+      <input type="checkbox">
+      <br>
+      <label>Type: email</label>
+      <input type="email">
+      <br>
+      <label>Type: number</label>
+      <input type="number">
+      <br>
+      <label>Type: range</label>
+      <input type="range" min="0" max="20" step="2">
+      <br>
+      <label>Type: search</label>
+      <input type="search">
+      <br>
+      <label>Type: image</label>
+      <input type="image">
+      <br>
+      <label>Type: week</label>
+      <input type="week">
+      <br>
+      <label>Type: url</label>
+      <input type="url">
+      <br>
+      <label>Type: datetime</label>
+      <input type="datetime-local">
+      <br>
+      <label>Type: month</label>
+      <input type="month">
+      <br>
+      <label>Type: time</label>
+      <input type="time">
+      <br>
+      <label>Type: date</label>
+      <input type="date">
+      <br>
+
+      <input id="red" type="text">
+      <label for="red">Red</label>
+      <br>
+      <label>
+        Blue
+        <input id="red" type="text">
+      </label>
+      <br>
+      <fieldset>
+        <legend>Theme Color</legend>
+        <label for="color">Define the color</label>
+        <input id="color" type="text">
+      </fieldset>
+
+      <h4>Validation</h4>
+      <input type="text" required>
+      <br>
+      <input type="text" minlength="5" maxlength="10">
+      <br>
+      <input type="text" pattern="\d*">
+      <br>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Forms',
+        code: `
+      <form action="upload.php" method="get"></form>
+      <form action="upload.php" method="post"></form>
+      <form action="upload.php" method="post"></form>
+      <form method="post" enctype="multipart/form-data" action="upload.php"> <input type="file" name="pic" />
+        <input type="submit" value="Upload" />
+      </form>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Div',
+        code: `
+        <div>Not nested</div>
+        <div class="outer-div">
+          <div class="inner-div">
+            <p>This is a paragraph</p>
+          </div>
+          <div class="inner-div">
+            <p>This is another paragraph</p>
+            </div>
+        </div>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Sectioning',
+        code: `
+        <nav>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </nav>
+
+        <header></header>
+        <section></section>
+        <footer></footer>
+        <article></article>
+        <main></main>
+
+        <section>
+          <article></article>
+        </section>
+        <article>
+          <header></header>
+          <section></section>
+          <footer></footer>
+        </article>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Navigation Bars',
+        code: `
+        <nav>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </nav>
+
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Label',
+        code: `
+        <label>
+          <input type="checkbox" name="Cats">
+          I like cats
+        </label>
+
+        <input id="cats" type="checkbox" name="Cats">
+        <label for="cats">I like cats</label>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Void Elements',
+        showUse: false,
+        code: `
+        <area>
+        <base>
+        <br>
+        &lt;col&gt;
+        <hr>
+        <img>
+        <input>
+        <link>
+        <meta>
+        <param>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Media Elements',
+        code: `
+        <audio controls>
+          <source src="file.mp3" type="audio/mp3">
+          Your browser does not support this element.
+        </audio>
+
+        <video controls>
+          <source src="file.mp4" type="video/mp4">
+          Your browser does not support this element.
+        </video>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Progress',
+        code: `
+        <progress value="20" max="100"></progress>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Selection Menu Controls',
+        code: `
+        <select name="one">
+          <option value=""></option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <select name="two">
+          <option value="" label="">
+          <option value="1" label="One">
+          <option value="2" label="Two">
+          <option value="3" label="Three">
+        </select>
+
+        <select name="three" multiple>
+          <option value=""></option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <select name="four" multiple>
+          <option value=""></option>
+          <option value="1" selected>One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <input list="Languages">
+        <datalist id="Languages">
+          <option value="PHP">
+          <option value="Perl">
+          <option value="Python">
+          <option value="Ruby">
+          <option value="C+">
+        </datalist>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Embed',
+        code: `
+        <embed type="video/mp4" src="video.mp4" width="640" height="480">
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'Iframe',
+        code: `
+        <iframe src="base.html"></iframe>
+        <iframe src="http://www.example.com"></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/suUsDNq4WtM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightXml({
+        title: 'SVG',
+        code: `
+        <svg style="width: 100px; height: 100px;" class="attention" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" > <path id="attention" d="m571,767l0,-106q0,-8,-5,-13t-12,-5l-108,0q-7,0,-12,5t-5,13l0,106q0,8,5,13t12,6l108,0q7,0,12,-6t5 ,-13Zm-1,-208l10,-257q0,-6,-5,-10q-7,-6,-14,-6l-122,0q-7,0,-14,6q-5,4,-5,12l9,255q0,5,6,9t13,3l103, 0q8,0,13,-3t6,-9Zm-7,-522l428,786q20,35,-1,70q-10,17,-26,26t-35,10l-858,0q-18,0,-35,-10t-26,-26q-21 ,-35,-1,-70l429,-786q9,-17,26,-27t36,-10t36,10t27,27Z" /></svg>
+                  `,
+      });
+    </script>
+  </div>
+
+  <div class="collapse" id="css3">
+    <h2>CSS 3</h2>
+    <hr>
+
+    <script>
+      highlightCss({
+        title: 'Structure and Formatting of a CSS Rule',
+        showUse: false,
+        code: `
+                        h1 {  }
+        span {
+          text-shadow: yellow 0 0 3px, green 4px 4px 10px;
+        }
+        div, p { color: blue }
+        p, .blue, #first, div span{ color : blue }
+                  `,
+      });
+    </script>
+
+    <script>
+      highlightCss({
+        title: 'Comments',
+        showUse: false,
+        code: `
+        /* This is a CSS comment */
+            `,
+      });
+    </script>
+
+    <script>
+      highlightCss({
+        title: 'Selectors',
+        showUse: false,
+        code: `
+        BASIC
+
+        Selector            Description
+        ===============================
+        *                   Universal selector (all elements)
+        div                 Tag selector (all &lt;div&gt; elements)
+        .blue               Class selector (all elements with class blue)
+        .blue.red           All elements with class blue and red (a type of Compound selector)
+        #headline           ID selector (the element with "id" attribute set to headline)
+        :pseudo-class       All elements with pseudo-class
+        ::pseudo-element    Element that matches pseudo-element
+        :lang(en)           Element that matches :lang declaration, for example &lt;span lang="en"&gt;
+        div > p             child selector
+
+
+        ATTRIBUTE
+
+        Selector(1)         Matched element                 Selects elements...                                                                                 CSS Version
+        ===================================================================================================================================================================
+        [attr]              &lt;div attr&gt;                      With attribute attr                                                                                 2
+        [attr='val']        &lt;div attr="val"&gt;                Where attribute attr has value val                                                                  2
+        [attr~='val']       &lt;div attr="val1 val2 val3"&gt;     Where val appears in the whitespace-separated list of attr                                          2
+        [attr^='val']       &lt;div attr="val1"&gt;               Where attr's value begins with val                                                                  3
+        [attr$='val']       &lt;div attr="1val"&gt;               Where the attr's value ends with val                                                                3
+        [attr*='val']       &lt;div attr="somevalhere"&gt;        Where attr contains val anywhere                                                                    3
+        [attr|='val']       &lt;div attr="val-sth"&gt;            Where attr's value is exactly val, or starts with val and immediately followed by - (U+002D)        2
+
+
+        COMBINATORS
+
+        Selector            Description
+        ===============================
+
+        div span            Descendant selector (all &lt;span&gt;s that are descendants of a &lt;div&gt;)
+        div > span          Child selector (all &lt;span&gt;s that are a direct child of a &lt;div&gt;)
+        a ~ span            General Sibling selector (all &lt;span&gt;s that are siblings after an &lt;a&gt;)
+        a + span            Adjacent Sibling selector (all &lt;span&gt;s that are immediately after an &lt;a&gt;)
+
+
+        PSEUDO-CLASSES (Most used)
+
+        Name                Description
+        ===============================
+
+        :first-child        Represents any element that is the first child element of its parent.
+        :first-of-type      Applies when an element is the first of the selected element type inside its parent. This may or may not be the first-child.
+        :last-child         Represents any element that is the last child element of its parent.
+        :last-of-type       Applies when an element is the last of the selected element type inside its parent. This may or may not be the last-child.
+        :nth-child          Applies when an element is the n-th element of its parent, where n can be an integer, a mathematical expression (e.g n+3) or the keywords odd or even.
+        :nth-of-type        Applies when an element is the n-th element of its parent of the same element type, where n can be an integer, a mathematical expression (e.g n+3) or the keywords odd or even.
+        :only-child         The :only-child CSS pseudo-class represents any element which is the only child of its parent. This is the same as :first-child:last-child or :nth-child(1):nth-last-child(1), but with a lower specificity.
+        :lang               Applies to any element who's wrapping &lt;body&gt; element has a properly designated lang= attribute. For the pseudo-class to be valid, it must contain a valid two or three letter language code.
+        :active             Applies to any element being activated (i.e. clicked) by the user.
+        :hover              Applies to any element being hovered by the user's pointing device, but not activated.
+        :target             Selects the current active #news element (clicked on a URL containing that anchor name)
+        :checked            Applies to radio, checkbox, or option elements that are checked or toggled into an "on" state.
+        :target             Selects the current active #news element (clicked on a URL containing that anchor name)
+        :visited            Applies to any links which have has been visited by the user.
+
+
+        CHILD PSEUDO-CLASSES
+
+        Pseudo-selector     1 2 3 4 5 6 7 8 9 10
+        ========================================
+        :first-child        X
+        :nth-child(3)           X
+        :nth-child(n+3)         X X X X X X X X
+        :nth-child(3n)          X     X     X
+        :nth-child(3n+1)    X   X     X     X
+        :nth-child(-n+3)    X X X
+        :nth-child(odd)     X   X   X   X   X
+        :nth-child(even)      X   X   X   X   X
+        :last-child                           X
+        :nth-last-child(3)                X
+            `,
+      });
+    </script>
+
+    <script>
+      highlightCss({
+        title: 'Backgrounds',
+        showUse: false,
+        code: `
+                        OPTIONS
+
+                        Value                   Description
+        ================================================================================================
+        background-image        Background image to use
+        background-color        Background color to apply
+        background-position     Background image's position
+        background-size         Background image's size
+        background-repeat       How to repeat background image
+        background-origin       How the background is positioned (ignored when background-attachment is fixed)
+        background-clip         How the background is painted relative to the content-box, border-box, or the padding-box
+        background-attachment   How the background image behaves, whether it scrolls along with its containing block or has a fixed position within the viewport
+
+
+        EXAMPLES
+
+        div {
+          background-color: red;
+          background-color: #FFFFFF;
+          background-color: #FFF;
+          background-color: rgb(0, 0, 0);
+          background-color: rgba(0, 0, 0, 0.5);
+          background-color: hsl(120, 100%, 50%);
+          background-color: hsla(120, 100%, 50%, .3);
+
+          background: linear-gradient(to left top, red, blue);
+          background: linear-gradient(to left top, red, orange, yellow, green, blue, indigo, violet);
+
+          background: radial-gradient(red, blue);
+          background: radial-gradient(circle, farthest-corner at top left, red, blue);
+
+          background: repeating-radial-gradient(red, red 10%, white 10%, white 20%);
+          background: repeating-linear-gradient(-45deg, yellow, yellow 10%, black 10%, black 20% );
+
+          background-image: url('path/to/image.png');
+          background-image: url('path/to/image.png'), url('path/to/another-image.png');
+          background: red url('path/to/image.png');
+          background-size: xpx ypx | x% y%;
+          background-repeat: no-repeat | repeat | repeat-x | repeat-y;
+          background-position: left offset (px/%) right offset (px/%) | center center | left top | right bottom;
+          background-position: 50% 50%;
+
+          background-size: 50px;
+          background-size: 50px auto; /* same as above */
+          background-size: auto 50px;
+          background-size: 50px 50px;
+        }
+
+        #mydiv {
+          background-image:       url(img_1.png), /* top image */
+                      url(img_2.png), /* middle image */
+                      url(img_3.png); /* bottom image */
+
+          background-position:    right bottom,
+                      left top,
+                      right top;
+
+          background-repeat:      no-repeat,
+                      repeat,
+                      no-repeat;
+        }
+
+
+            `,
+      });
+    </script>
+  </div>
+
+  <div class="collapse" id="bootstrap4">
+    <h2>Bootstrap 4</h2>
+    <hr>
+
+    <script>
+      highlightXml({
+        title: 'Section',
+        code: `
+      <section class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <h1>Heading 1</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>Paragraph 1</p>
+              <p>Paragraph 2</p>
+            </div>
+            <div class="col">
+              <p>Paragraph 3</p>
+              <p>Paragraph 4</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      `,
+      });
+    </script>
+  </div>
+</pre>

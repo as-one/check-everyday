@@ -1,3 +1,11 @@
+@import url(../../node_modules/@as-one/components/structure/dist/grid/grid.min.css);
 * {
   margin: 0;
   padding: 0; }
+
+.header__nav {
+  display: flex; }
+
+.header__nav-option {
+  flex-grow: 1;
+  text-align: center; }

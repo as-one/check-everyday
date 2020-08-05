@@ -11,5 +11,8 @@
     "@as-one/starter-app": "github:as-one/starter-app"
   },
   "keywords": [],
-  "author": ""
+  "author": "",
+  "dependencies": {
+    "@as-one/components": "github:as-one/components"
+  }
 }
