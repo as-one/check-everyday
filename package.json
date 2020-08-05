@@ -8,8 +8,8 @@
     "dev": "starter-app-dev -i src -o dist"
   },
   "devDependencies": {
-    "@as-one/starter-app": "github:as-one/starter-app",
-    "@as-one/components": "github:as-one/components"
+    "@as-one/components": "github:as-one/components",
+    "@as-one/starter-app": "github:as-one/starter-app"
   },
   "keywords": [],
   "author": ""
