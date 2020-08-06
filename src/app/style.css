@@ -1,11 +1,10 @@
-@import url(../../node_modules/@as-one/components/structure/dist/grid/grid.min.css);
-* {
+@import url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.1/css/bootstrap-grid.min.css);
+:not(ul) {
   margin: 0;
   padding: 0; }
 
 .header__nav {
   display: flex; }
-
-.header__nav-option {
-  flex-grow: 1;
-  text-align: center; }
+  .header__nav-option {
+    flex-grow: 1;
+    text-align: center; }

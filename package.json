@@ -5,7 +5,10 @@
   "main": "src/index.html",
   "scripts": {
     "build": "starter-app-build -i src -o dist",
-    "dev": "starter-app-dev -i src -o dist"
+    "dev": "starter-app-dev",
+    "live-server": "live-server --port=3000",
+    "sass": "node-sass -w src -o src",
+    "dev2": "concurrently live-server sass"
   },
   "devDependencies": {
     "@as-one/components": "github:as-one/components",
