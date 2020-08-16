@@ -1,19 +1,17 @@
 {
-  "name": "my-starter-app",
+  "name": "as-one-check-everyday",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.html",
   "scripts": {
     "build": "starter-app-build -i src -o docs",
-    "dev": "starter-app-dev",
-    "live-server": "live-server --port=3000",
-    "sass": "node-sass -w src -o src",
-    "dev2": "concurrently live-server sass"
+    "dev": "starter-app-dev --noTS"
   },
   "devDependencies": {
     "@as-one/components": "github:as-one/components",
     "@as-one/starter-app": "github:as-one/starter-app"
+    "concurrently": "^5.3.0"
   },
   "keywords": [],
-  "author": ""
+  "author": "As One"
 }

@@ -1,11 +1,9 @@
-// import loadHtml from '../../node_modules/@as-one/components/libs/FetchHtml/FetchHtml.js';
-// import Router from '../../node_modules/@as-one/components/libs/Router/Router.js';
 import loadHtml from './libs/FetchHtml.js';
 import Router from './libs/Router.js';
 
 const router = new Router({
   mode: 'hash',
-  root: '/'
+  root: '/',
 });
 
 router
