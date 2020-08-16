@@ -1,33 +1,36 @@
-<h3>Parent and Children</h3>
-<div class="row">
-  <div class="col-sm-12">
-    <pre>
-let parent = document.querySelector('.parent'),
-    els = document.querySelectorAll('.parent .el'),
-    el = document.querySelector('.parent .el'),
-    newEl = document.createElement('div');
-    </pre>
-  </div>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-6">
+      <h3>Parent & Children</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <pre>
+let parent = document.querySelector('.parent'),           // get parent
+    els = document.querySelectorAll('.parent .el'),       // get all children
+    el = document.querySelector('.parent .el'),           // get one child
+    newEl = document.createElement('div');                // create element
+    </pre
+          >
+        </div>
+      </div>
 
-<h3>Events</h3>
-<div class="row">
-  <div class="col-sm-12">
-    <pre>
+      <h3>Events</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <pre>
 document.addEventListener('DOMContentLoaded', () => {});  // ready
 el.addEventListener('click', () => {});                   // on
 el.removeEventListener();                                 // off Check MDN
-    </pre>
-  </div>
-</div>
+    </pre
+          >
+        </div>
+      </div>
 
-<h3>Elements</h3>
-<div class="row">
-  <div class="col-sm-12">
-    <pre>
-////////////////////////////////////
-// Create
-
+      <h3>Elements</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Create</h4>
+          <pre>
 document.createElement('div');                  // create
 el.cloneNode(true|false);                       // clone
 el.before(newEl);                               // prev sibling / before()
@@ -36,10 +39,10 @@ el.append(newEl);                               // last child / append()
 el.after(newEl);                                // next sibling / after()
 el.replaceWith(newEl);                          // replace all
 // el.insertAdjacentHTML('', newEl);            // Check MDN
+          </pre>
 
-////////////////////////////////////
-// Retrieve
-
+          <h4>Retrieve</h4>
+          <pre>
 document.querySelector('.className');           // get element
 document.querySelectorAll('.className');        // get elements
 el.querySelectorAll('.className');              // get children by selector
@@ -52,38 +55,39 @@ el.previousElementSibling;                      // get previous sibling
 el.nextElementSibling;                          // get next sibling
 
 el.forEach((item, index, array) => {});         // foreach (Array)
+          </pre>
 
-// Boolean returns
+          <h4>Delete</h4>
+          <pre>
+el.remove();                                    // remove itself
+el.innerHTML = '';                              // remove content
+          </pre>
+
+          <h4>Returns boolean</h4>
+          <pre>
 el.classList.contains('className');             // has class
 el.filter(() => {});                            // filter
 el !== child && el.contains(child);             // contains
 !!newMe.querySelector('.className');            // contains selector
 el === newEl;                                   // matches
-
-////////////////////////////////////
-// Delete
-
-el.remove();                                    // remove itself
-el.innerHTML = '';                              // remove content
-    </pre>
-  </div>
-</div>
-
-<h3>Attributes</h3>
-<div class="row">
-  <div class="col-sm-12">
-    <pre>
-////////////////////////////////////
-// Class
-
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+      <h3>Attributes</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Class</h4>
+          <pre>
 el.className;                                   // get class name
 el.classList.add('className');                  // add class
 el.classList.remove('className');               // remove class
 el.classList.toggle('className');               // toggle class
+          </pre>
 
-////////////////////////////////////
-// Style
-
+          <h4>Style</h4>
+          <pre>
 getComputedStyle(el)['width'];                  // get any style post-rendering
 
 el.style.borderWidth = '10px';                  // set style
@@ -92,10 +96,10 @@ el.style.borderWidth;                           // get style
 el.setAttribute('attr', 'value');               // set attributes
 el.getAttribute('attr');                        // get attributes
 el.removeAttribute('attr');                     // remove attributes
+          </pre>
 
-////////////////////////////////////
-// Position, width, and height
-
+          <h4>Position, width, and height</h4>
+          <pre>
 el.getBoundingClientRect();                     // get all positions
 el.offsetTop; el.offsetLeft;                    // get position top and left
 
@@ -107,23 +111,23 @@ el.clientHeight;                                // get height
 
 window.pageXOffset;                             // scroll X
 window.pageYOffset;                             // scroll Y
+          </pre>
 
-////////////////////////////////////
-// Content
-
+          <h4>Content</h4>
+          <pre>
 el.outerHTML = '&lt;div>&lt;/&lt;div>';                  // set HTML
 el.outerHTML;                                   // get HTML
 
 el.innerHTML = 'Content';                       // set content of HTML
 el.innerHTML;                                   // get content of HTML
-    </pre>
-  </div>
-</div>
+          </pre>
+        </div>
+      </div>
 
-<h3>Misc</h3>
-<div class="row">
-  <div class="col-sm-12">
-    <pre>
+      <h3>Misc</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <pre>
 let promise = fetch(url, options);              // Fetching
 Object.values(els).indexOf(el);                 // index of
 el.forEach((item, index, array) => {});         // array each
@@ -138,6 +142,10 @@ typeof el;                                      // type
 
 el.style.display = 'block';                     // show tag
 el.style.display = 'none';                      // hide tag
-    </pre>
+    </pre
+          >
+        </div>
+      </div>
+    </div>
   </div>
 </div>

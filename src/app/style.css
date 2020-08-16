@@ -1,10 +1,82 @@
-@import url(./libs/bootstrap-grid.min.css);
-:not(ul) {
+@import url(../../node_modules/@as-one/components/structure/dist/grid/grid.min.css);
+@import url(../assets/fonts/stylesheet.css);
+:root {
+  --blue0: #02101c;
+  --blue50: #1e2e50;
+  --blue100: #00f4ff;
+  --pink50: #ff0054;
+  --red50: #f82754;
+  --yellow50: #f7df2e;
+  --avantGardeBook: 'ITC Avant Garde Std Book', sans-serif;
+  --avantGardeBold: 'ITC Avant Garde Std Bold', sans-serif; }
+
+:not(ul, ol) {
   margin: 0;
   padding: 0; }
 
+ul {
+  list-style-type: none;
+  padding-left: 0; }
+
+ol {
+  padding-left: 35px; }
+
+body {
+  background-color: var(--blue0);
+  font-family: monospace;
+  color: var(--blue100);
+  font-size: 14px; }
+
+strong {
+  font-weight: normal; }
+
+h1 {
+  font-family: var(--avantGardeBold); }
+
+h2,
+h4 {
+  font-family: var(--avantGardeBook);
+  color: var(--yellow50); }
+
+h3 {
+  font-family: var(--avantGardeBold);
+  color: var(--pink50); }
+
+a {
+  font-family: var(--avantGardeBold); }
+
+.header__top {
+  display: flex;
+  align-items: center; }
+
+.header__top-title {
+  display: block;
+  width: 200px;
+  height: 100px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  mask-position: center center;
+  -webkit-mask-image: url(../assets/logo-as-one.svg);
+  mask-image: url(../assets/logo-as-one.svg);
+  -webkit-mask-size: 180px;
+  mask-size: 180px;
+  background-repeat: no-repeat;
+  background-color: var(--blue100); }
+
+.header__top-subtitle {
+  font-size: 40px;
+  height: 37px;
+  color: var(--blue50);
+  letter-spacing: -2px; }
+
 .header__nav {
   display: flex; }
-  .header__nav-option {
-    flex-grow: 1;
-    text-align: center; }
+
+.header__nav-option {
+  flex-grow: 1;
+  text-align: center;
+  font-family: var(--avantGardeBold);
+  font-size: 25px;
+  text-decoration: none;
+  color: var(--pink50); }
