@@ -5,11 +5,12 @@
   "main": "src/index.html",
   "scripts": {
     "build": "starter-app-build -i src -o docs",
+    "prod": "starter-app-dev -i docs --noTS",
     "dev": "starter-app-dev --noTS"
   },
   "devDependencies": {
     "@as-one/components": "github:as-one/components",
-    "@as-one/starter-app": "github:as-one/starter-app"
+    "@as-one/starter-app": "github:as-one/starter-app",
     "concurrently": "^5.3.0"
   },
   "keywords": [],

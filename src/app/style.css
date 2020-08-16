@@ -47,35 +47,32 @@ a {
 .header__top {
   display: flex;
   align-items: center; }
-
-.header__top-title {
-  display: block;
-  width: 200px;
-  height: 100px;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center center;
-  mask-position: center center;
-  -webkit-mask-image: url(../assets/logo-as-one.svg);
-  mask-image: url(../assets/logo-as-one.svg);
-  -webkit-mask-size: 180px;
-  mask-size: 180px;
-  background-repeat: no-repeat;
-  background-color: var(--blue100); }
-
-.header__top-subtitle {
-  font-size: 40px;
-  height: 37px;
-  color: var(--blue50);
-  letter-spacing: -2px; }
+  .header__top-title {
+    display: block;
+    width: 200px;
+    height: 100px;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-image: url(../assets/logo-as-one.svg);
+    mask-image: url(../assets/logo-as-one.svg);
+    -webkit-mask-size: 180px;
+    mask-size: 180px;
+    background-repeat: no-repeat;
+    background-color: var(--blue100); }
+  .header__top-subtitle {
+    font-size: 40px;
+    height: 37px;
+    color: var(--blue50);
+    letter-spacing: -2px; }
 
 .header__nav {
   display: flex; }
-
-.header__nav-option {
-  flex-grow: 1;
-  text-align: center;
-  font-family: var(--avantGardeBold);
-  font-size: 25px;
-  text-decoration: none;
-  color: var(--pink50); }
+  .header__nav-option {
+    flex-grow: 1;
+    text-align: center;
+    font-family: var(--avantGardeBold);
+    font-size: 25px;
+    text-decoration: none;
+    color: var(--pink50); }
