@@ -5,8 +5,8 @@
   "main": "src/index.html",
   "scripts": {
     "build": "starter-app-build -i src -o docs",
-    "prod": "starter-app-dev -i docs --noTS",
-    "dev": "starter-app-dev --noTS"
+    "dev": "starter-app-dev --noTS",
+    "prod": "starter-app-dev -i docs --noTS"
   },
   "devDependencies": {
     "@as-one/components": "github:as-one/components",
