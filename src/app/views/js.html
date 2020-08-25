@@ -1,15 +1,232 @@
 <div class="container">
   <div class="row">
+    <div class="col-sm-12">
+      <h2>The Language</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Fundamentals</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-12 col-lg-4">
+          <h4>Developer Console</h4>
+          <pre>
+Command + Option + I
+debugger;
+alert();
+          </pre>
+
+          <h4>Variables</h4>
+          <pre>
+const
+let   // block scope
+var   // function scope
+          </pre>
+
+          <h4>Data Types</h4>
+          <pre>
+string
+number
+boolean
+array
+object
+          </pre>
+
+          <h4>Type Conversions</h4>
+          <pre>
+Number()    // to number
+String()    // to string
+Boolean()   // to boolean
+          </pre>
+        </div>
+
+        <div class="col-sm-12 col-lg-4">
+          <h4>Comparisons</h4>
+          <pre>
+===
+<=
+>=
+!=    // different
+&&    // and
+||    // or
+          </pre>
+
+          <h4>Conditional</h4>
+          <pre>
+if () {
+
+} else
+if () {
+
+} else {
+
+}
+          </pre>
+
+          <h4>Logical Operators</h4>
+          <pre>
++
+-
+*	// multiplication
+/	// division
+++	// +1
+--	// -1
+          </pre>
+        </div>
+
+        <div class="col-sm-12 col-lg-4">
+          <h4>Loops</h4>
+          <pre>
+let length = 20;
+for (let i = 0; i < length; i++) {
+
+}
+
+switch {
+  case 1:
+    break;
+  case 2:
+    break;
+  default:
+    break;
+}
+
+arraysOrObjects.forEach(arrayOrObject => {
+  console.log(arrayOrObject);
+});
+          </pre>
+
+          <h4>Functions</h4>
+          <pre>
+function name() {}
+let name = function() {}
+let name = () => {}       // arrow function
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-lg-4">
+      <h3>Code Quality</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Coding Style</h4>
+          <a target="_blank" href="https://javascript.info/coding-style">JS Info's Coding Style</a>
+
+          <h4>Comments</h4>
+          <pre>
+// Single line
+
+/*
+  Block
+*/
+          </pre>
+        </div>
+      </div>
+
+      <h3>Objects</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <h4></h4>
+          <pre>
+let newObject = {
+  key: "value",
+  key2: "value2"
+};
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4">
+      <h3>Data Types</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Array</h4>
+          <pre>
+let newArray = [ "value", "value2" ];
+          </pre>
+
+          <h4>Date</h4>
+          <pre>
+let date = new Date();
+          </pre>
+
+          <h4>JSON</h4>
+          <pre>
+{
+  "key": "value",
+  "key2": "value2"
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4">
+      <h3>Classes</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <pre>
+class Example {
+  // 1. let const
+  // 2. functions
+  // 3. render() || init()
+}
+          </pre>
+        </div>
+      </div>
+
+      <h3>Promises</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <pre>
+let promiseFunction = new Promise();
+
+async function Parent() {
+  let promise = await PromiseFunction();
+}
+          </pre>
+        </div>
+      </div>
+
+      <h3>Modules</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <pre>
+export default Logo;          // in file logo.js
+import Logo from './logo.js'; // in file index.js
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Browser</h2>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-sm-12 col-lg-6">
       <h3>Parent & Children</h3>
       <div class="row">
         <div class="col-sm-12">
           <pre>
-let parent = document.querySelector('.parent'),           // get parent
-    els = document.querySelectorAll('.parent .el'),       // get all children
-    el = document.querySelector('.parent .el'),           // get one child
-    newEl = document.createElement('div');                // create element
-    </pre
+let parent = document.querySelector('.parent'),       // get parent
+els = document.querySelectorAll('.parent .el'),       // get all children
+el = document.querySelector('.parent .el'),           // get one child
+newEl = document.createElement('div');                // create element
+</pre
           >
         </div>
       </div>
@@ -21,7 +238,7 @@ let parent = document.querySelector('.parent'),           // get parent
 document.addEventListener('DOMContentLoaded', () => {});  // ready
 el.addEventListener('click', () => {});                   // on
 el.removeEventListener();                                 // off Check MDN
-    </pre
+</pre
           >
         </div>
       </div>
@@ -39,7 +256,8 @@ el.append(newEl);                               // last child / append()
 el.after(newEl);                                // next sibling / after()
 el.replaceWith(newEl);                          // replace all
 // el.insertAdjacentHTML('', newEl);            // Check MDN
-          </pre>
+      </pre
+          >
 
           <h4>Retrieve</h4>
           <pre>
@@ -55,22 +273,15 @@ el.previousElementSibling;                      // get previous sibling
 el.nextElementSibling;                          // get next sibling
 
 el.forEach((item, index, array) => {});         // foreach (Array)
-          </pre>
+      </pre
+          >
 
           <h4>Delete</h4>
           <pre>
 el.remove();                                    // remove itself
 el.innerHTML = '';                              // remove content
-          </pre>
-
-          <h4>Returns boolean</h4>
-          <pre>
-el.classList.contains('className');             // has class
-el.filter(() => {});                            // filter
-el !== child && el.contains(child);             // contains
-!!newMe.querySelector('.className');            // contains selector
-el === newEl;                                   // matches
-          </pre>
+      </pre
+          >
         </div>
       </div>
     </div>
@@ -84,7 +295,8 @@ el.className;                                   // get class name
 el.classList.add('className');                  // add class
 el.classList.remove('className');               // remove class
 el.classList.toggle('className');               // toggle class
-          </pre>
+      </pre
+          >
 
           <h4>Style</h4>
           <pre>
@@ -96,7 +308,8 @@ el.style.borderWidth;                           // get style
 el.setAttribute('attr', 'value');               // set attributes
 el.getAttribute('attr');                        // get attributes
 el.removeAttribute('attr');                     // remove attributes
-          </pre>
+      </pre
+          >
 
           <h4>Position, width, and height</h4>
           <pre>
@@ -111,7 +324,8 @@ el.clientHeight;                                // get height
 
 window.pageXOffset;                             // scroll X
 window.pageYOffset;                             // scroll Y
-          </pre>
+      </pre
+          >
 
           <h4>Content</h4>
           <pre>
@@ -121,12 +335,80 @@ el.outerHTML;                                   // get HTML
 el.innerHTML = 'Content';                       // set content of HTML
 el.innerHTML;                                   // get content of HTML
           </pre>
+
+          <h4>Returns boolean</h4>
+          <pre>
+el.classList.contains('className');             // has class
+el.filter(() => {});                            // filter
+el !== child && el.contains(child);             // contains
+!!newMe.querySelector('.className');            // contains selector
+el === newEl;                                   // matches
+          </pre>
         </div>
       </div>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Additional</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>General</h3>
+
+      <div class="row">
+        <div class="col-sm-12 col-lg-6">
+          <h4>Nomenclature</h4>
+          <pre>
+DOM = Document Object Model
+          </pre>
+        </div>
+
+        <div class="col-sm-12 col-lg-6">
+          <h4>UI Events</h4>
+          <pre>
+Mouse: click, scroll, mouseenter, mouseleave
+Keyboard: keydown, keyup
+Form: focus, blur, change
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-lg-6">
+      <h3>Storing data</h3>
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Cookie - Older approach</h4>
+          <pre>
+C: setCookie(key, value)
+R: getCookie(key)
+U: setCookie(key, value)
+D: deleteCookie(key)
+          </pre>
+          <a target="_blank" href="https://javascript.info/cookie">JS Info Cookie's Functions</a>
+
+          <h4>Local Storage - Newer approach</h4>
+          <pre>
+C: localStorage.setItem('key', 'value')
+R: localStorage.getItem('key')
+U: localStorage.setItem('key', 'value')
+D: localStorage.removeItem('key')
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-6">
       <h3>Misc</h3>
       <div class="row">
         <div class="col-sm-12">
+          <h4>Extra functions</h4>
           <pre>
 let promise = fetch(url, options);              // Fetching
 Object.values(els).indexOf(el);                 // index of
@@ -142,7 +424,7 @@ typeof el;                                      // type
 
 el.style.display = 'block';                     // show tag
 el.style.display = 'none';                      // hide tag
-    </pre
+</pre
           >
         </div>
       </div>
