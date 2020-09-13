@@ -12,7 +12,8 @@
   --avantGardeBold: 'ITC Avant Garde Std Bold', sans-serif;
 }
 
-:not(ul, ol) {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -49,6 +50,15 @@ h3 {
 }
 a {
   font-family: var(--avantGardeBold);
+}
+
+.pre {
+  white-space: pre-wrap;
+}
+
+.welcome {
+  margin-top: 40px;
+  text-align: center;
 }
 
 .header {
