@@ -1,8 +1,6 @@
 class Router {
   routes = [];
-
   mode = null;
-
   root = '/';
 
   constructor(options) {
@@ -12,12 +10,12 @@ class Router {
     this.listen();
   }
 
-  add = (path, cb) => {
+  add(path, cb) {
     this.routes.push({ path, cb });
     return this;
   };
 
-  remove = path => {
+  remove(path) {
     for (let i = 0; i < this.routes.length; i += 1) {
       if (this.routes[i].path === path) {
         this.routes.slice(i, 1);
@@ -27,18 +25,19 @@ class Router {
     return this;
   };
 
-  flush = () => {
+  flush() {
     this.routes = [];
     return this;
   };
 
-  clearSlashes = path =>
+  clearSlashes(path) {
     path
       .toString()
       .replace(/\/$/, '')
       .replace(/^\//, '');
+  }
 
-  getFragment = () => {
+  getFragment() {
     let fragment = '';
     if (this.mode === 'history') {
       fragment = this.clearSlashes(decodeURI(window.location.pathname + window.location.search));
@@ -51,7 +50,7 @@ class Router {
     return this.clearSlashes(fragment);
   };
 
-  navigate = (path = '') => {
+  navigate(path = '') {
     if (this.mode === 'history') {
       window.history.pushState(null, null, this.root + this.clearSlashes(path));
     } else {
@@ -60,12 +59,12 @@ class Router {
     return this;
   };
 
-  listen = () => {
+  listen() {
     clearInterval(this.interval);
     this.interval = setInterval(this.interval, 50);
   };
 
-  interval = () => {
+  interval() {
     if (this.current === this.getFragment()) return;
     this.current = this.getFragment();
 
