@@ -5,7 +5,7 @@ const router = new Router({
   root: "/"
 });
 router.add(/html/, () => {
-  loadHtml(".content", "app/views/html.html");
+  console.log("html"), loadHtml(".content", "app/views/html.html");
 }).add(/css/, () => {
   loadHtml(".content", "app/views/css.html");
 }).add(/js/, () => {

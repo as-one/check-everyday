@@ -64,18 +64,19 @@ a {
       mask-repeat: no-repeat;
       -webkit-mask-position: center center;
       mask-position: center center;
-      -webkit-mask-image: url(../assets/logo-as-one.svg);
-      mask-image: url(../assets/logo-as-one.svg);
+      -webkit-mask-image: url(../assets/as-one-logo-lying-down.svg);
+      mask-image: url(../assets/as-one-logo-lying-down.svg);
       -webkit-mask-size: 180px;
       mask-size: 180px;
       background-repeat: no-repeat;
       background-color: var(--blue100);
     }
     &-subtitle {
-      font-size: 40px;
       height: 37px;
-      color: var(--blue50);
+      margin: 12px 0 0 5px;
+      font-size: 40px;
       letter-spacing: -2px;
+      color: var(--blue50);
     }
   }
   &__nav {

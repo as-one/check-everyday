@@ -8,6 +8,7 @@ const router = new Router({
 
 router
   .add(/html/, () => {
+    console.log('html');
     loadHtml('.content', 'app/views/html.html');
   })
   .add(/css/, () => {

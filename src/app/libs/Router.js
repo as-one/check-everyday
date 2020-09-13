@@ -1,9 +1,15 @@
 class Router {
-  routes = [];
-  mode = null;
-  root = '/';
+  // routes = [];
+  // mode = null;
+  // root = '/';
+  // current = '';
 
   constructor(options) {
+    this.routes = [];
+    this.mode = null;
+    this.root = '/';
+    this.current = '';
+
     this.mode = window.history.pushState ? 'history' : 'hash';
     if (options.mode) this.mode = options.mode;
     if (options.root) this.root = options.root;
@@ -13,7 +19,7 @@ class Router {
   add(path, cb) {
     this.routes.push({ path, cb });
     return this;
-  };
+  }
 
   remove(path) {
     for (let i = 0; i < this.routes.length; i += 1) {
@@ -23,15 +29,15 @@ class Router {
       }
     }
     return this;
-  };
+  }
 
   flush() {
     this.routes = [];
     return this;
-  };
+  }
 
   clearSlashes(path) {
-    path
+    return path
       .toString()
       .replace(/\/$/, '')
       .replace(/^\//, '');
@@ -61,11 +67,11 @@ class Router {
 
   listen() {
     clearInterval(this.interval);
-    this.interval = setInterval(this.interval, 50);
-  };
+    this.interval = setInterval(this.interval.bind(this), 50);
+  }
 
   interval() {
-    if (this.current === this.getFragment()) return;
+    if (this.current === undefined || this.current === this.getFragment()) return;
     this.current = this.getFragment();
 
     this.routes.some(route => {
@@ -77,7 +83,8 @@ class Router {
       }
       return false;
     });
-  };
+  }
+
 }
 
 export default Router;
