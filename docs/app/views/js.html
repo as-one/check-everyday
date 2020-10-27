@@ -230,8 +230,7 @@ let parent = document.querySelector('.parent'),       // get parent
 els = document.querySelectorAll('.parent .el'),       // get all children
 el = document.querySelector('.parent .el'),           // get one child
 newEl = document.createElement('div');                // create element
-</pre
-          >
+          </div>
         </div>
       </div>
 
@@ -242,8 +241,7 @@ newEl = document.createElement('div');                // create element
 document.addEventListener('DOMContentLoaded', () => {});  // ready
 el.addEventListener('click', () => {});                   // on
 el.removeEventListener();                                 // off Check MDN
-</pre
-          >
+          </div>
         </div>
       </div>
 
@@ -260,8 +258,7 @@ el.append(newEl);                               // last child / append()
 el.after(newEl);                                // next sibling / after()
 el.replaceWith(newEl);                          // replace all
 // el.insertAdjacentHTML('', newEl);            // Check MDN
-      </pre
-          >
+          </div>
 
           <h4>Retrieve</h4>
           <div class="pre">
@@ -277,15 +274,13 @@ el.previousElementSibling;                      // get previous sibling
 el.nextElementSibling;                          // get next sibling
 
 el.forEach((item, index, array) => {});         // foreach (Array)
-      </pre
-          >
+          </div>
 
           <h4>Delete</h4>
           <div class="pre">
 el.remove();                                    // remove itself
 el.innerHTML = '';                              // remove content
-      </pre
-          >
+          </div>
         </div>
       </div>
     </div>
@@ -299,8 +294,7 @@ el.className;                                   // get class name
 el.classList.add('className');                  // add class
 el.classList.remove('className');               // remove class
 el.classList.toggle('className');               // toggle class
-      </pre
-          >
+          </div>
 
           <h4>Style</h4>
           <div class="pre">
@@ -312,8 +306,7 @@ el.style.borderWidth;                           // get style
 el.setAttribute('attr', 'value');               // set attributes
 el.getAttribute('attr');                        // get attributes
 el.removeAttribute('attr');                     // remove attributes
-      </pre
-          >
+          </div>
 
           <h4>Position, width, and height</h4>
           <div class="pre">
@@ -328,8 +321,7 @@ el.clientHeight;                                // get height
 
 window.pageXOffset;                             // scroll X
 window.pageYOffset;                             // scroll Y
-      </pre
-          >
+          </div>
 
           <h4>Content</h4>
           <div class="pre">
@@ -428,8 +420,7 @@ typeof el;                                      // type
 
 el.style.display = 'block';                     // show tag
 el.style.display = 'none';                      // hide tag
-</pre
-          >
+          </div>
         </div>
       </div>
     </div>
