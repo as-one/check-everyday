@@ -21,7 +21,7 @@
 
 ## Quick Start
 
-Check our latest release accessing the tool: <a href="https://as-one.github.io/check-everyday/">As One - Check Everyday</a>
+Check our latest release accessing the tool: <a href="https://as-one.github.io/check-everyday/">As One - Check Everyday</a>.
 
 ## Overview
 
