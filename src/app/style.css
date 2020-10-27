@@ -65,40 +65,46 @@ a {
 
 .header {
   margin-bottom: 30px; }
-  .header__top {
-    display: flex;
-    align-items: center;
-    margin: 40px auto 60px; }
-    .header__top-title {
-      display: block;
-      width: 200px;
-      height: 45px;
-      margin: 0;
-      mask-repeat: no-repeat;
-      mask-position: center center;
-      mask-image: url(../assets/as-one-logo-lying-down.svg);
-      mask-size: 180px;
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-position: center center;
-      -webkit-mask-image: url(../assets/as-one-logo-lying-down.svg);
-      -webkit-mask-size: 180px;
-      background-repeat: no-repeat;
-      background-color: var(--color_blue100); }
-    .header__top-subtitle {
-      height: 37px;
-      margin: 10px 0 0 5px;
-      font-size: 40px;
-      letter-spacing: -2px;
-      color: var(--color_blue100); }
-  .header__nav {
-    display: flex; }
-    .header__nav-option {
-      flex-grow: 1;
-      text-align: center;
-      font-family: var(--fontFamily_avantGardeBold);
-      font-size: 25px;
-      text-decoration: none;
-      color: var(--color_pink50); }
+
+.header__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 40px auto 60px; }
+
+.header__top-title {
+  display: block;
+  width: 200px;
+  height: 45px;
+  margin: 0;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-image: url(../assets/as-one-logo-lying-down.svg);
+  mask-size: 180px;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-image: url(../assets/as-one-logo-lying-down.svg);
+  -webkit-mask-size: 180px;
+  background-repeat: no-repeat;
+  background-color: var(--color_blue100); }
+
+.header__top-subtitle {
+  height: 37px;
+  margin: 10px 0 0 5px;
+  font-size: 40px;
+  letter-spacing: -2px;
+  color: var(--color_blue100); }
+
+.header__nav {
+  display: flex; }
+
+.header__nav-option {
+  flex-grow: 1;
+  text-align: center;
+  font-family: var(--fontFamily_avantGardeBold);
+  font-size: 25px;
+  text-decoration: none;
+  color: var(--color_pink50); }
 
 .content {
   padding-bottom: 50px; }
@@ -110,9 +116,10 @@ a {
   width: 200px;
   padding-top: 10px;
   background: black; }
-  .footer__link {
-    display: block;
-    text-align: center; }
+
+.footer__link {
+  display: block;
+  text-align: center; }
 
 ::-webkit-scrollbar {
   width: 14px; }
