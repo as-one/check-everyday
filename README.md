@@ -11,7 +11,7 @@
 <br>
 
 <p align="center">
-  The ideal documentation to swiftly review your knowledge about HTML, CSS and JavaScript.
+  The ideal documentation to swiftly review your knowledge about HTML, CSS, and JavaScript.
   <br>
   <br>
   <a href="https://github.com/as-one/check-everyday/issues/new">Report bug</a>
