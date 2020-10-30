@@ -18,6 +18,7 @@
           <h4>Developer Console</h4>
           <div class="pre">
 Command + Option + I
+console.log();
 debugger;
 alert();
           </div>
@@ -123,6 +124,8 @@ let name = () => {}       // arrow function
       <div class="row">
         <div class="col-sm-12">
           <h4>Coding Style</h4>
+          <a target="_blank" href="https://prettier.io/">Prettier</a>
+          <a target="_blank" href="https://eslint.org/">ESLint</a>
           <a target="_blank" href="https://javascript.info/coding-style">JS Info's Coding Style</a>
 
           <h4>Comments</h4>
@@ -407,15 +410,16 @@ D: localStorage.removeItem('key')
           <h4>Extra functions</h4>
           <div class="pre">
 let promise = fetch(url, options);              // Fetching
-Object.values(els).indexOf(el);                 // index of
+JSON.stringify({});.............................// JSON to string
+JSON.parse('string');                           // JSON string to object
+el.map(() => {});                               // map
 el.forEach((item, index, array) => {});         // array each
 el.indexOf('className');                        // index of
-Array.isArray(el);                              // is array
-el.map(() => {});                               // map
-Date.now();                                     // now
-JSON.parse('string');                           // parse JSON
 el.slice(0, 5);                                 // slice
 el.trim();                                      // trim
+Object.values(els).indexOf(el);                 // index of
+Array.isArray(el);                              // is array
+Date.now();                                     // now
 typeof el;                                      // type
 
 el.style.display = 'block';                     // show tag
