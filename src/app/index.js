@@ -17,6 +17,9 @@ router
   .add(/js/, () => {
     loadHtml('.content', 'app/views/js.html');
   })
+  .add(/ts/, () => {
+    loadHtml('.content', 'app/views/ts.html');
+  })
   .add('', () => {
     loadHtml('.content', 'app/views/html.html');
   });

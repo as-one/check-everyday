@@ -51,10 +51,10 @@ Boolean()   // to boolean
           <h4>Comparisons</h4>
           <div class="pre">
 ===
-<=
->=
+&lt;=
+&gt;=
 !=    // different
-&&    // and
+&amp;&amp;    // and
 ||    // or
           </div>
 
@@ -85,7 +85,7 @@ if () {
           <h4>Loops</h4>
           <div class="pre">
 let length = 20;
-for (let i = 0; i < length; i++) {
+for (let i = 0; i &lt; length; i++) {
 
 }
 
@@ -98,11 +98,11 @@ switch {
     break;
 }
 
-arrays.forEach(array => {
+arrays.forEach(array =&gt; {
   console.log(array);
 });
 
-objects.forEach(object => {
+objects.forEach(object =&gt; {
   console.log(object);
 });
           </div>
@@ -111,7 +111,7 @@ objects.forEach(object => {
           <div class="pre">
 function name() {}
 let name = function() {}
-let name = () => {}       // arrow function
+let name = () =&gt; {}       // arrow function
           </div>
         </div>
       </div>
@@ -225,7 +225,7 @@ import Logo from './logo.js'; // in file index.js
 
   <div class="row">
     <div class="col-sm-12 col-lg-6">
-      <h3>Parent & Children</h3>
+      <h3>Parent &amp; Children</h3>
       <div class="row">
         <div class="col-sm-12">
           <div class="pre">
@@ -241,8 +241,8 @@ newEl = document.createElement('div');                // create element
       <div class="row">
         <div class="col-sm-12">
           <div class="pre">
-document.addEventListener('DOMContentLoaded', () => {});  // ready
-el.addEventListener('click', () => {});                   // on
+document.addEventListener('DOMContentLoaded', () =&gt; {});  // ready
+el.addEventListener('click', () =&gt; {});                   // on
 el.removeEventListener();                                 // off Check MDN
           </div>
         </div>
@@ -276,7 +276,7 @@ el.lastElementChild;                            // get last child
 el.previousElementSibling;                      // get previous sibling
 el.nextElementSibling;                          // get next sibling
 
-el.forEach((item, index, array) => {});         // foreach (Array)
+el.forEach((item, index, array) =&gt; {});         // foreach (Array)
           </div>
 
           <h4>Delete</h4>
@@ -328,7 +328,7 @@ window.pageYOffset;                             // scroll Y
 
           <h4>Content</h4>
           <div class="pre">
-el.outerHTML = '&lt;div>&lt;/&lt;div>';                  // set HTML
+el.outerHTML = '&lt;div&gt;&lt;/&lt;div&gt;';                  // set HTML
 el.outerHTML;                                   // get HTML
 
 el.innerHTML = 'Content';                       // set content of HTML
@@ -338,8 +338,8 @@ el.innerHTML;                                   // get content of HTML
           <h4>Returns boolean</h4>
           <div class="pre">
 el.classList.contains('className');             // has class
-el.filter(() => {});                            // filter
-el !== child && el.contains(child);             // contains
+el.filter(() =&gt; {});                            // filter
+el !== child &amp;&amp; el.contains(child);             // contains
 !!newMe.querySelector('.className');            // contains selector
 el === newEl;                                   // matches
           </div>
@@ -412,8 +412,8 @@ D: localStorage.removeItem('key')
 let promise = fetch(url, options);              // Fetching
 JSON.stringify({});                             // JSON to string
 JSON.parse('string');                           // JSON string to object
-el.map(() => {});                               // map
-el.forEach((item, index, array) => {});         // array each
+el.map(() =&gt; {});                               // map
+el.forEach((item, index, array) =&gt; {});         // array each
 el.indexOf('className');                        // index of
 el.slice(0, 5);                                 // slice
 el.trim();                                      // trim
