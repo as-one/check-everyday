@@ -176,9 +176,7 @@ let date = new Date();
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-sm-12 col-md-4">
       <h3>Classes</h3>
       <div class="row">
         <div class="col-sm-12">
@@ -192,25 +190,49 @@ class Example {
         </div>
       </div>
 
-      <h3>Promises</h3>
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="pre">
-let promiseFunction = new Promise();
-
-async function Parent() {
-  let promise = await PromiseFunction();
-}
-          </div>
-        </div>
-      </div>
-
       <h3>Modules</h3>
       <div class="row">
         <div class="col-sm-12">
           <div class="pre">
 export default Logo;          // in file logo.js
 import Logo from './logo.js'; // in file index.js
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+
+
+      <h3>Promises</h3>
+      <div class="row">
+        <div class="col-sm-12">
+
+          <h4>then</h4>
+          <div class="pre">
+function runPromise(){
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(`runPromise: resolve ${Math.random()}`);
+    }, 1000);
+  })
+}
+runPromise().then(console.log);
+          </div>
+
+          <h4>async/await</h4>
+          <div class="pre">
+async function runNewPromise() {
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(`runNewPromise: resolve ${Math.random()}`);
+    }, 2000);
+  })
+
+  let response = await promise;
+  console.log(response);
+}
+runNewPromise();
           </div>
         </div>
       </div>
@@ -409,7 +431,7 @@ D: localStorage.removeItem('key')
         <div class="col-sm-12">
           <h4>Extra functions</h4>
           <div class="pre">
-let promise = fetch(url, options);              // Fetching
+let fetchData = fetch(url, options);            // Fetching
 JSON.stringify({});                             // JSON to string
 JSON.parse('string');                           // JSON string to object
 el.map(() =&gt; {});                               // map
@@ -421,6 +443,7 @@ Object.values(els).indexOf(el);                 // index of
 Array.isArray(el);                              // is array
 Date.now();                                     // now
 typeof el;                                      // type
+Math.ceil(Math.random() * 10);                  // random between 0 and 10
 
 el.style.display = 'block';                     // show tag
 el.style.display = 'none';                      // hide tag
