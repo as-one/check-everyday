@@ -213,7 +213,7 @@ import Logo from './logo.js'; // in file index.js
 function runPromise(){
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(`runPromise: resolve ${Math.random()}`);
+      resolve('runPromise');
     }, 1000);
   })
 }
@@ -225,7 +225,7 @@ runPromise().then(console.log);
 async function runNewPromise() {
   let promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(`runNewPromise: resolve ${Math.random()}`);
+      resolve('runNewPromise');
     }, 2000);
   })
 
