@@ -102,9 +102,7 @@ function consoleLogMessage(message: any): void {
   console.log(message);
 }
 
-consoleLogMessage('Message');
-consoleLogMessage(10);
-consoleLogMessage(true);
+consoleLogMessage('Message'); // Message
           </div>
         </div>
       </div>
@@ -121,7 +119,7 @@ function add(x: number, y: number): number {
   return x + y;
 }
 
-add(1, 2);
+add(1, 2); // 3
           </div>
         </div>
       </div>
@@ -138,7 +136,7 @@ function addFromObject({ x, y }: { x: number; y: number }): number {
   return x + y;
 }
 
-addFromObject({ x: 1, y: 2 });
+addFromObject({ x: 1, y: 2 }); // 3
           </div>
         </div>
       </div>

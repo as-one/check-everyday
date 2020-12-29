@@ -84,11 +84,6 @@ if () {
         <div class="col-sm-12 col-md-4">
           <h4>Loops</h4>
           <div class="pre">
-let length = 20;
-for (let i = 0; i &lt; length; i++) {
-
-}
-
 switch {
   case 1:
     break;
@@ -98,6 +93,11 @@ switch {
     break;
 }
 
+let length = 20;
+for (let i = 0; i &lt; length; i++) {
+
+}
+
 arrays.forEach(array =&gt; {
   console.log(array);
 });
@@ -105,7 +105,16 @@ arrays.forEach(array =&gt; {
 objects.forEach(object =&gt; {
   console.log(object);
 });
+
+Array.map()     // creates a new array
+Array.reduce()  // returns single value
+Array.find()    // returns the first passed element
+Array.filter()  // return filtered string
+Array.every()   // if all return true
+Array.some()    // if some return true
+Array.indexOf() // index of
           </div>
+          <a target="_blank" href="https://www.w3schools.com/js/js_array_iteration.asp">W3Schools' JS Array Iteration</a>
 
           <h4>Functions</h4>
           <div class="pre">
@@ -159,7 +168,7 @@ let newObject = {
         <div class="col-sm-12">
           <h4>Array</h4>
           <div class="pre">
-let newArray = [ "value", "value2" ];
+let newArray = ["value", "value2"];
           </div>
 
           <h4>Date</h4>
@@ -434,9 +443,6 @@ D: localStorage.removeItem('key')
 let fetchData = fetch(url, options);            // Fetching
 JSON.stringify({});                             // JSON to string
 JSON.parse('string');                           // JSON string to object
-el.map(() =&gt; {});                               // map
-el.forEach((item, index, array) =&gt; {});         // array each
-el.indexOf('className');                        // index of
 el.slice(0, 5);                                 // slice
 el.trim();                                      // trim
 Object.values(els).indexOf(el);                 // index of
