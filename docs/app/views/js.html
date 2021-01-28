@@ -274,7 +274,8 @@ newEl = document.createElement('div');                // create element
           <div class="pre">
 document.addEventListener('DOMContentLoaded', () =&gt; {});  // ready
 el.addEventListener('click', () =&gt; {});                   // on
-el.removeEventListener();                                 // off Check MDN
+el.removeEventListener();                                    // off Check MDN
+window.addEventListener("resize", () =&gt; {});              // on resize
           </div>
         </div>
       </div>
@@ -299,6 +300,7 @@ el.replaceWith(newEl);                          // replace all
 document.querySelector('.className');           // get element
 document.querySelectorAll('.className');        // get elements
 el.querySelectorAll('.className');              // get children by selector
+el.closest('.className');                       // get closest parent by selector
 
 el.parentElement;                               // get parent
 el.children;                                    // get children
@@ -353,8 +355,11 @@ el.clientWidth;                                 // get width
 el.style.height = '100px';                      // set height
 el.clientHeight;                                // get height
 
-window.pageXOffset;                             // scroll X
-window.pageYOffset;                             // scroll Y
+window.scrollX;                                 // pixels scrolled in X axis
+window.scrollY;                                 // pixels scrolled in Y axis
+
+document.body.clientWidth;                      // window width (for resizing)
+document.body.clientHeight;                     // window height
           </div>
 
           <h4>Content</h4>
