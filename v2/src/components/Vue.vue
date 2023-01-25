@@ -185,10 +185,10 @@ import Child from "@/components/Child.vue";
   </div>
 
     <div class="row">
-      <div class="col-sm-12 col-md-4">
-        <h3>Events Handlers</h3>
+      <div class="col-sm-12">
         <div class="row">
-          <div class="col-sm-12">
+          <h3>Events Handlers</h3>
+          <div class="col-sm-12 col-md-4">
             <h4>Method Handlers</h4>
             <pre class="pre">
 &lt;template>
@@ -215,7 +215,9 @@ function say(message) {
 }
 &lt;/script>
             </pre>
+          </div>
 
+          <div class="col-sm-12 col-md-4">
             <h4>Inline Handlers</h4>
             <pre class="pre">
 &lt;template>
@@ -230,40 +232,37 @@ const counter = ref(0);
 &lt;/script>
             </pre>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12 col-md-4">
             <h4>Event Modifiers</h4>
             <pre class="pre">
 &lt;template>
-&lt;a @click.stop="doThis">&lt;/a>
+  &lt;a @click.stop="doThis">&lt;/a>
 
-&lt;form @submit.prevent="onSubmit">&lt;/form>
+  &lt;form @submit.prevent="onSubmit">&lt;/form>
 
-&lt;a @click.stop.prevent="doThat">&lt;/a>
+  &lt;a @click.stop.prevent="doThat">&lt;/a>
 
-&lt;form @submit.prevent="onSubmit">&lt;/form>
+  &lt;form @submit.prevent="onSubmit">&lt;/form>
 
-&lt;div @click.self="doThat">...&lt;/div>
+  &lt;div @click.self="doThat">...&lt;/div>
 &lt;/template>
             </pre>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12 col-md-4">
             <h4>Key Modifiers</h4>
             <pre class="pre">
 &lt;template>
-&lt;input @keyup.enter="submit" />
+  &lt;input @keyup.enter="submit" />
 
-&lt;input @keyup.page-down="onPageDown" />
+  &lt;input @keyup.page-down="onPageDown" />
 
 .delete - captures both "Delete" and "Backspace" keys
 &lt;/template>
             </pre>
           </div>
+
         </div>
       </div>
     </div>
@@ -587,5 +586,93 @@ const product = reactive({
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <h3>Routing</h3>
+          <div class="col-sm-12 col-md-4">
+            <h4>Simple Routing from Scratch</h4>
+            <pre class="pre">
+&lt;template>
+  &lt;a href="#/">Home&lt;/a>
+  &lt;a href="#/about">About&lt;/a>
+  &lt;a href="#/non-existent-path">Broken Link&lt;/a>
+  &lt;component :is="currentView" />
+&lt;/template>
+
+&lt;script setup>
+import { ref, computed } from 'vue';
+import { createRouter, createWebHistory } from "vue-router";
+import Home from './Home.vue';
+import About from './About.vue';
+import NotFound from './NotFound.vue';
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: "/",
+      name: "home",
+      component: Home,
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: About,
+    },
+    {
+      path: "/not-found",
+      name: "notFound",
+      component: NotFound,
+    },
+  ],
+});
+
+export default router;
+
+const currentPath = ref(window.location.hash);
+
+window.addEventListener('hashchange', () => {
+  currentPath.value = window.location.hash
+});
+
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || '/'] || NotFound
+});
+
+&lt;/script>
+
+==================================================
+App.vue
+&lt;template>
+  &lt;nav>
+    &lt;RouterLink to="/home">Home&lt;/RouterLink>
+    &lt;RouterLink to="/about">About&lt;/RouterLink>
+    &lt;RouterLink to="/not-found">NotFound&lt;/RouterLink>
+  &lt;/nav>
+&lt;/template>
+
+&lt;script setup>
+import { RouterLink, RouterView } from "vue-router";
+&lt;/script>
+            </pre>
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+            <h4>Redirecting</h4>
+            <pre class="pre">
+&lt;template>&lt;/template>
+
+&lt;script setup>
+created() {
+  this.$router.push('/components');
+}
+&lt;/script>
+            </pre>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 </template>
