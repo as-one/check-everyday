@@ -8,15 +8,21 @@
 
     <div class="row">
       <div class="col-sm-12">
-        <h3>Render Props</h3>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12">
         <div class="row">
           <div class="col-sm-12 col-md-4">
-            <h4>In &lt;script setup></h4>
+            <h3>Props</h3>
+            <h4>Assigning</h4>
+            <pre>
+&lt;template>
+  // Static
+  &lt;blog-post title="My journey with Vue" />
+
+  // Dynamic
+  &lt;blog-post :title="post.title"/>
+&lt;/template>
+            </pre>
+
+            <h4>Declaring - Composition API</h4>
             <pre class="pre">
 &lt;script setup>
 const props = defineProps(['foo']);
@@ -36,11 +42,11 @@ console.log(props.likes);
 &lt;/script>
             </pre>
 
-            <h4>In non &lt;script setup></h4>
+            <h4>Declaring - Options API</h4>
             <pre class="pre">
 &lt;script>
 export default {
-  props = ['foo'],
+  props: ['foo'],
   setup(props) {
     console.log(props.foo);
   }
@@ -61,77 +67,62 @@ export default {
 }
 &lt;/script>
             </pre>
-
-            <h4>Using Props</h4>
-            <pre>
-&lt;template>
-  &lt;blog-post title="My journey with Vue" />
-
-Or dynamic
-
-  &lt;blog-post :title="post.title"/>
-&lt;/template>
-            </pre>
           </div>
 
           <div class="col-sm-12 col-md-4">
+            <h3>Sharing State</h3>
             <h4>Top Down</h4>
+            <h5>Grandpa to Dad</h5>
             <pre class="pre">
 // Grandpa.vue
+
 &lt;template>
-  &lt;dad-component grandpa-message="Hi from Grandpa" />
+  &lt;dad grandpa-message="Hi from Grandpa" />
 &lt;/template>
 
 &lt;script setup>
-import DadComponent from "@/components/DadComponent.vue";
-
-defineProps({
-  GrandpaMessage: String,
-});
-
+import Dad from "@/Dad.vue";
 &lt;/script>
 
-
-===================================================
-
+==========
 
 // Dad.vue
+
 &lt;template>
-  &lt;span>"Hi from Grandpa"&lt;/span>
   &lt;span>{{ GrandpaMessage }}&lt;/span>
-
 &lt;/template>
 
-===================================================
-
-// Child.vue
-&lt;template>
-<!--  &lt;span>"Hi from Grandpa"&lt;/span>-->
-<!--  &lt;span>{{ GrandpaMessage }}&lt;/span>-->
-
-&lt;/template>
+&lt;script setup>
+  defineProps({
+    GrandpaMessage: String,
+  });
+&lt;/script>
             </pre>
           </div>
 
           <div class="col-sm-12 col-md-4">
+            <h3>Sharing State</h3>
             <h4>Bottom Up - Emits</h4>
+            <h5>Child to Dad</h5>
             <pre class="pre">
-// Dad.vue - Dad &lt; Child
+// Dad.vue
+
 &lt;template>
   &lt;child @handleButton="showAlert" />
 &lt;/template>
 
 &lt;script setup>
-import Child from "@/components/Child.vue";
+import Child from "@/Child.vue";
 
 function showAlert(value) {
   alert(value);
 };
 &lt;/script>
 
-===================================================
+==========
 
 // Child.vue
+
 &lt;template>
   &lt;button @click="handleClick">Button&lt;/button>
 &lt;/template>
@@ -145,44 +136,48 @@ function handleClick() {
   emit('handleButton', 'Clicked!');
 }
 &lt;/script>
+            </pre>
 
-  =======================================
-// Grandpa.vue - Grandpa &lt; Dad &lt; Child
+            <h5>Child to Grandpa</h5>
+            <pre class="pre">
+// Grandpa.vue
+
 &lt;template>
   &lt;dad @handleButton="showAlert" />
 &lt;/template>
 
 &lt;script setup>
-import Dad from "@/components/Dad.vue";
+import Dad from "@/Dad.vue";
 
 function showAlert(value) {
   alert(value);
 };
 &lt;/script>
 
-===================================================
+==========
 
 // Dad.vue
+
 &lt;template>
   &lt;child />
 &lt;/template>
 
 &lt;script setup>
-import Child from "@/components/Child.vue";
+import Child from "@/Child.vue";
 &lt;/script>
 
-===================================================
+==========
 
 // Child.vue
+
 &lt;template>
   &lt;button @click="$dad.$emit('handleButton', 'Clicked!')>Button&lt;/button>
 &lt;/template>
             </pre>
           </div>
-
+        </div>
       </div>
     </div>
-  </div>
 
     <div class="row">
       <div class="col-sm-12">
@@ -665,7 +660,7 @@ import { RouterLink, RouterView } from "vue-router";
 
 &lt;script setup>
 created() {
-  this.$router.push('/components');
+  this.$router.push('/my-path');
 }
 &lt;/script>
             </pre>

@@ -57,9 +57,14 @@ h4 {
   color: var(--color_yellow50);
 }
 
-h3 {
+h3,
+h5 {
   font-family: var(--fontFamily_avantGardeBold);
   color: var(--color_pink50);
+}
+
+h5 {
+  font-size: 13px;
 }
 
 a {
