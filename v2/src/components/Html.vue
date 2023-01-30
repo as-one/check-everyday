@@ -421,9 +421,6 @@ background-color: red;
 &lt;label>Type: tel&lt;/label>
 &lt;input type="tel" value="+15544332211">
 
-&lt;label>Type: checkbox&lt;/label>
-&lt;input type="checkbox">
-
 &lt;label>Type: email&lt;/label>
 &lt;input type="email">
 
@@ -518,9 +515,6 @@ background-color: red;
         <br />
         <label>Type: tel</label>
         <input type="tel" value="+15544332211" />
-        <br />
-        <label>Type: checkbox</label>
-        <input type="checkbox" />
         <br />
         <label>Type: email</label>
         <input type="email" />
