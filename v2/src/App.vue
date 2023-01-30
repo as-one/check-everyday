@@ -18,8 +18,8 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink class="header__nav-option" to="/css">CSS</RouterLink>
         <RouterLink class="header__nav-option" to="/js">JS</RouterLink>
         <RouterLink class="header__nav-option" to="/ts">TS</RouterLink>
-        <RouterLink class="header__nav-option" to="/vue">Vue.js</RouterLink>
-        <RouterLink class="header__nav-option" to="/react">React.js</RouterLink>
+        <RouterLink class="header__nav-option" to="/vue">Vue</RouterLink>
+        <RouterLink class="header__nav-option" to="/react">React</RouterLink>
       </nav>
     </div>
   </header>
