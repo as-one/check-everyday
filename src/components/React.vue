@@ -7,126 +7,56 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <h3>Render Props</h3>
-      </div>
-    </div>
+      <div class="col-sm-12 col-md-4">
+        <h3>Props</h3>
+        <h4>Function and Class component</h4>
+        <pre class="pre">
+&lt;Welcome name="Julie" role="developer" />
 
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <div class="col-sm-12 col-md-4">
-            <h4>Function and Class component</h4>
-            <pre class="pre">
-Doc.jsx
-function Welcome(props) {
-  return &lt;h1>Hello, {props.name}&lt;/h1>;
-}
+// OR
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-const element = &lt;Welcome name="Julie" />;root.render(element);
+&lt;Welcome {...props} />
 
-OR
-
-Doc.jsx
 class Welcome extends React.Component {
+  return &lt;h1>Hello, {props.name}, {props.role}&lt;/h1>;
+
+  // OR
+
   render() {
-    return &lt;h1>Hello, {this.props.name}&lt;/h1>;
+    return &lt;h1>Hello, {this.props.name}, {this.props.role}&lt;/h1>;
   }
 }
 
-=========================================
-function Profile({ person, size, isSepia, thickBorder }) {
+// OR
+
+export function Welcome(props) {
   return (
-    &lt;div className="card">
-      &lt;Avatar
-        person={person}
-        size={size}
-        isSepia={isSepia}
-        thickBorder={thickBorder}
-      />
-    &lt;/div>
+    &lt;h1>Hello, {props.name}, {props.role}&lt;/h1>
   );
 }
+         </pre>
+      </div>
 
-OR
-
-function Profile(props) {
-  return (
-    &lt;div className="card">
-      &lt;Avatar {...props} />
-    &lt;/div>
-  );
-}
-
-=========================================
-Avatar.js
-import { getImageUrl } from './utils.js';
-
-export default function Avatar({ person, size }) {
-  return (
-    &lt;img
-      className="avatar"
-      src={getImageUrl(person)}
-      alt={person.name}
-      width={size}
-      height={size}
-    />
-  );
-}
-
-=========================================
-App.js
-import Avatar from './Avatar.js';
-
-function Card({ children }) {
-  return (
-    &lt;div className="card">
-      {children}
-    &lt;/div>
-  );
-}
-
-export default function Profile() {
-  return (
-    &lt;Card>
-      &lt;Avatar
-        size={100}
-<!--        person={{-->
-<!--        name: 'Katsuko Saruhashi',-->
-<!--        imageId: 'YfeOqp2'-->
-<!--        }}-->
-        person={
-        name: 'Katsuko Saruhashi',
-        imageId: 'YfeOqp2'
-        }
-      />
-    &lt;/Card>
-  );
-}
-            </pre>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <h4>Top Down</h4>
-            <h4>Grandpa -> Dad - Uses Props</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h3>Sharing State</h3>
+        <h4>Top Down</h4>
+        <h5>Grandpa to Dad (props)</h5>
+        <pre class="pre">
 // Grandpa.jsx
-import React from 'react';
+
 import Dad from './Dad.jsx';
 
 const Grandpa = () => {
   return (
-<!--    &lt;Dad data={{ test: 123 }} this is right/>-->
-    &lt;Dad data={ test: 123 } />
+    &lt;Dad data={ {test: 123}} />
   );
 };
 
 export default Grandpa;
 
-============================================
-// Dad.js
-import React from 'react';
+=============
+
+// Dad.jsx
 
 const Dad = (props) => {
   console.log(props.data); // {test: 123}
@@ -135,16 +65,15 @@ const Dad = (props) => {
 export default Dad;
             </pre>
 
-            <h4>Grandpa -> Kid - Uses Context API</h4>
-            <pre>
+        <h5>Grandpa to Kid (Context API)</h5>
+        <pre>
 // Grandpa.jsx
-import React from 'react';
-import Dad from './Dad.jsx';
 
+import Dad from './Dad.jsx';
 export const DataContext = React.createContext();
 
 const Grandpa = () => {
-  const data = { test: 123 };
+  const data = {test: 123};
   return (
     &lt;DataContext.Provider value={data}>
       &lt;Dad />
@@ -154,22 +83,22 @@ const Grandpa = () => {
 
 export default Grandpa;
 
-============================================
-// Dad.js
-import React from 'react';
-import { DataContext } from './Grandpa';
+=============
+
+// Dad.jsx
+
 import Kid from './Kid.jsx';
 
 const Dad = () => {
-  return (
-    &lt;Kid />
-  );
+  return &lt;Kid />;
 };
 
 export default Dad;
 
-============================================
+=============
+
 // Kid.jsx
+
 import React, { useContext } from 'react';
 import { DataContext } from './Grandpa';
 
@@ -178,20 +107,22 @@ const Kid = () => {
   return (
     &lt;div>
       The data received is: {data.test}
+      // {test: 123}
     &lt;/div>
   );
 };
 
 export default Kid;
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Bottom Up</h4>
-            <h4>Dad -> Grandpa - Callback Props</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h3>Sharing State</h3>
+        <h4>Bottom Up</h4>
+        <h5>Dad to Grandpa (callback props)</h5>
+        <pre class="pre">
 // Grandpa.jsx
-import React from 'react';
+
 import Dad from './Dad.jsx';
 
 const Grandpa = () => {
@@ -205,9 +136,7 @@ const Grandpa = () => {
 
 export default Grandpa;
 
-============================================
-// Dad.js
-import React from 'react';
+=============
 
 const Dad = ({ grandpaHandleData }) => {
   const handleClick = () => {
@@ -222,9 +151,10 @@ const Dad = ({ grandpaHandleData }) => {
 export default Dad;
             </pre>
 
-            <h4>Kid -> Grandpa</h4>
-            <pre>
+        <h5>Kid to Grandpa (Context API)</h5>
+        <pre>
 // Grandpa.jsx
+
 import React, { Component } from "react";
 import Dad from './Dad.jsx';
 
@@ -241,12 +171,9 @@ class Grandpa extends Component {
   render() {
     return (
       &lt;MyContext.Provider
-<!--          value={{-->
-<!--          handleData: this.handleData-->
-<!--          }}-->
-        value={
+          value={ {
             handleData: this.handleData
-        }
+          }}
       >
         &lt;Dad />
         &lt;p>{this.state.data.message}&lt;/p>
@@ -257,8 +184,9 @@ class Grandpa extends Component {
 
 export default Grandpa;
 
-============================================
+=============
 // Dad.js
+
 import React, { Component } from "react";
 import Kid from "./Kid";
 
@@ -270,8 +198,9 @@ class Dad extends Component {
 
 export default Dad;
 
-============================================
+=============
 // Kid.jsx
+
 import React, { Component } from "react";
 import { MyContext } from "./Grandpa";
 
@@ -291,23 +220,16 @@ class Kid extends Component {
 
 export default Kid;
             </pre>
-          </div>
-
-        </div>
       </div>
+
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <h3>Events Handlers</h3>
-          <div class="col-sm-12 col-md-4">
-            <h4>Method Handlers</h4>
-            <pre class="pre">
-&lt;button onClick={activateLasers}>
-  Activate Lasers
-&lt;/button>
-
+      <h3>Events Handlers</h3>
+      <div class="col-sm-12 col-md-4">
+        <h4>Method Handlers</h4>
+        <h5>Function</h5>
+        <pre class="pre">
 function Form() {
   function handleSubmit(e) {
     e.preventDefault();
@@ -321,12 +243,13 @@ function Form() {
   );
 }
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Method on the Class</h4>
-            <pre class="pre">
-Doc.jsx
+      <div class="col-sm-12 col-md-4">
+        <h4>Method Handlers</h4>
+
+        <h5>Class</h5>
+        <pre class="pre">
 class Toggle extends React.Component {
   constructor(props) {
     super(props);
@@ -354,31 +277,9 @@ class Toggle extends React.Component {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(&lt;Toggle />);
             </pre>
-          </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Public Class Fields Syntax</h4>
-            <pre class="pre">
-class LoggingButton extends React.Component {
-  // This syntax ensures `this` is bound within handleClick.
-  handleClick = () => {
-    console.log('this is:', this);
-  };
-
-  render() {
-    return (
-      &lt;button onClick={this.handleClick}>
-        Click me
-      &lt;/button>
-    );
-  }
-}
-            </pre>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <h4>Arrow Function</h4>
-            <pre class="pre">
+        <h5>Class - Arrow Function</h5>
+        <pre class="pre">
 class LoggingButton extends React.Component {
   handleClick() {
     console.log('this is:', this);
@@ -394,30 +295,26 @@ class LoggingButton extends React.Component {
   }
 }
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Passing Arguments to Event Handlers</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>Passing Arguments to Event Handlers</h4>
+        <pre class="pre">
 &lt;button onClick={(e) => this.deleteRow(id, e)}>Delete Row&lt;/button>
 
+// OR
+
 &lt;button onClick={this.deleteRow.bind(this, id)}>Delete Row&lt;/button>
-
-The above two lines are equivalent, and use arrow functions and Function.prototype.bind respectively.
             </pre>
-          </div>
-
-        </div>
       </div>
+
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <h3>Conditional Rendering</h3>
-          <div class="col-sm-12 col-md-4">
-            <h4>if or The Conditional Operator</h4>
-            <pre class="pre">
+      <h3>Conditional Rendering</h3>
+      <div class="col-sm-12 col-md-4">
+        <h4>On function</h4>
+        <pre class="pre">
 function UserGreeting(props) {
   return &lt;h1>Welcome back!&lt;/h1>;
 }
@@ -434,99 +331,16 @@ function Greeting(props) {
   return &lt;GuestGreeting />;
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-// Try changing to isLoggedIn={true}:
-root.render(&lt;Greeting isLoggedIn={false} />);
-
-This example renders a different greeting depending on the value of isLoggedIn prop.
+&lt;Greeting isLoggedIn={false} />;
         </pre>
+      </div>
 
-            <h4>Conditionally returning</h4>
-            <pre class="pre">
-function Item({ name, isPacked }) {
-  if (isPacked) {
-    return &lt;li className="item">{name} ✔&lt;/li>;
-  }
-  return &lt;li className="item">{name}&lt;/li>;
-}
-
-export default function PackingList() {
-  return (
-    &lt;section>
-      &lt;h1>Sally Ride's Packing List&lt;/h1>
-      &lt;ul>
-        &lt;Item
-          isPacked={true}
-          name="Space suit"
-        />
-        &lt;Item
-          isPacked={true}
-          name="Helmet with a golden leaf"
-        />
-        &lt;Item
-          isPacked={false}
-          name="Photo of Tam"
-        />
-      &lt;/ul>
-    &lt;/section>
-  );
-}
-        </pre>
-
-            <h4>Conditionally returning nothing with null</h4>
-            <pre class="pre">
-function Item({ name, isPacked }) {
-  if (isPacked) {
-    return null;
-  }
-  return &lt;li className="item">{name}&lt;/li>;
-}
-
-export default function PackingList() {
-  return (
-    &lt;section>
-      &lt;h1>Sally Ride's Packing List&lt;/h1>
-      &lt;ul>
-        &lt;Item
-          isPacked={true}
-          name="Space suit"
-        />
-        &lt;Item
-          isPacked={true}
-          name="Helmet with a golden leaf"
-        />
-        &lt;Item
-          isPacked={false}
-          name="Photo of Tam"
-        />
-      &lt;/ul>
-    &lt;/section>
-  );
-}
-        </pre>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <h4>Element Variables</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>On rendering, conditional on JS</h4>
+        <pre class="pre">
 class LoginControl extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = {isLoggedIn: false};
-  }
-
-  handleLoginClick() {
-    this.setState({isLoggedIn: true});
-  }
-
-  handleLogoutClick() {
-    this.setState({isLoggedIn: false});
-  }
-
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
+    const isLoggedIn = true;
     let button;
 
     if (isLoggedIn) {
@@ -536,194 +350,52 @@ class LoginControl extends React.Component {
     }
 
     return (
-      &lt;div>
-        &lt;Greeting isLoggedIn={isLoggedIn} />
-        {button}
-      &lt;/div>
+      {button}
     );
   }
 }
-
-function UserGreeting(props) {
-  return &lt;h1>Welcome back!&lt;/h1>;
-}
-
-function GuestGreeting(props) {
-  return &lt;h1>Please sign up.&lt;/h1>;
-}
-
-function Greeting(props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return &lt;UserGreeting />;
-  }
-  return &lt;GuestGreeting />;
-}
-
-function LoginButton(props) {
-  return (
-    &lt;button onClick={props.onClick}>
-      Login
-    &lt;/button>
-  );
-}
-
-function LogoutButton(props) {
-  return (
-    &lt;button onClick={props.onClick}>
-      Logout
-    &lt;/button>
-  );
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(&lt;LoginControl />);
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Inline If Logical && Operator</h4>
-            <pre class="pre">
-function Mailbox(props) {
-  const unreadMessages = props.unreadMessages;
-  return (
-    &lt;div>
-      &lt;h1>Hello!&lt;/h1>
-      {unreadMessages.length > 0 &&
-        &lt;h2>
-          You have {unreadMessages.length} unread messages.
-        &lt;/h2>
-      }
-    &lt;/div>
-  );
-}
-
-const messages = ['React', 'Re: React', 'Re:Re: React'];
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(&lt;Mailbox unreadMessages={messages} />);
-
-===============================
-function Item({ name, isPacked }) {
-  return (
-    &lt;li className="item">
-      {name} {isPacked && '✔'}
-    &lt;/li>
-  );
-}
-
-export default function PackingList() {
-  return (
-    &lt;section>
-      &lt;h1>Sally Ride's Packing List&lt;/h1>
-      &lt;ul>
-        &lt;Item
-          isPacked={true}
-          name="Space suit"
-        />
-        &lt;Item
-          isPacked={true}
-          name="Helmet with a golden leaf"
-        />
-        &lt;Item
-          isPacked={false}
-          name="Photo of Tam"
-        />
-      &lt;/ul>
-    &lt;/section>
-  );
-}
-
-            </pre>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <h4>Inline if-else with Conditional Operator</h4>
-            <pre class="pre">
-condition ? true : false
-
-render() {
-  const isLoggedIn = this.state.isLoggedIn;
-  return (
-    &lt;div>
-      The user is &lt;b>{isLoggedIn ? 'currently' : 'not'}&lt;/b> logged in.
-    &lt;/div>
-  );
-}
-
-OR
-
-render() {
-  const isLoggedIn = this.state.isLoggedIn;
-  return (
-    &lt;div>
-      {isLoggedIn
-        ? &lt;LogoutButton onClick={this.handleLogoutClick} />
-        : &lt;LoginButton onClick={this.handleLoginClick} />
-      }
-    &lt;/div>
-    );
-}
-==============================================
+      <div class="col-sm-12 col-md-4">
+        <h4>On rendering, conditional on JSX</h4>
+        <pre class="pre">
 return (
-  &lt;li className="item">
-    {isPacked ? name + ' ✔' : name}
-  &lt;/li>
+  &lt;div>
+    {count && &lt;h1>{count}&lt;/h1>}
+  &lt;/div>
 );
 
-==============================================
-function Item({ name, isPacked }) {
-  return (
-    &lt;li className="item">
-      {isPacked ? (
-        &lt;del>
-          {name + ' ✔'}
-        &lt;/del>
-      ) : (
-        name
-      )}
-    &lt;/li>
-  );
-}
+// OR
 
-export default function PackingList() {
-  return (
-    &lt;section>
-    &lt;h1>Sally Ride's Packing List&lt;/h1>
-    &lt;ul>
-      &lt;Item
-        isPacked={true}
-        name="Space suit"
-      />
-      &lt;Item
-        isPacked={true}
-        name="Helmet with a golden leaf"
-      />
-      &lt;Item
-        isPacked={false}
-        name="Photo of Tam"
-      />
-    &lt;/ul>
-    &lt;/section>
-  );
-}
+return (
+    {unreadMessages.length > 0 &&
+      {unreadMessages.length} unread messages.
+    }
+);
 
-==============================================
-Render h1
-render() {
-  const count = 0;
-  return (
-    &lt;div>
-      {count && &lt;h1>Messages: {count}&lt;/h1>}
-    &lt;/div>
-  );
-}
+// OR
+
+return (
+  &lt;div>
+    The user is {isLoggedIn ? 'currently' : 'not'} logged in.
+  &lt;/div>
+);
+
+// OR
+
+return (
+  {isLoggedIn
+    ? &lt;LogoutButton />
+    : &lt;LoginButton />
+  }
+);
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Preventing Component from Rendering</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>Preventing rendering</h4>
+        <pre class="pre">
 function WarningBanner(props) {
   if (!props.warn) {
     return null;
@@ -735,330 +407,72 @@ function WarningBanner(props) {
     &lt;/div>
   );
 }
-
-class Page extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {showWarning: true}
-    this.handleToggleClick = this.handleToggleClick.bind(this);
-  }
-
-  handleToggleClick() {
-    this.setState(prevState => ({
-      showWarning: !prevState.showWarning
-    }));
-  }
-
-  render() {
-    return (
-      &lt;div>
-        &lt;WarningBanner warn={this.state.showWarning} />
-        &lt;button onClick={this.handleToggleClick}>
-          {this.state.showWarning ? 'Hide' : 'Show'}
-        &lt;/button>
-      &lt;/div>
-    );
-  }
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(&lt;Page />);
             </pre>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <h4>Conditionally including JSX</h4>
-            <pre class="pre">
-if (isPacked) {
-  return &lt;li className="item">{name} ✔&lt;/li>;
-}
-return &lt;li className="item">{name}&lt;/li>;
-
-Both of the conditional branches return &lt;li className="item">...&lt;/li>:
-            </pre>
-
-            <h4>Conditionally assigning JSX to a variable</h4>
-            <pre class="pre">
-function Item({ name, isPacked }) {
-  let itemContent = name;
-  if (isPacked) {
-    itemContent = (
-      &lt;del>
-        {name + " ✔"}
-      &lt;/del>
-    );
-  }
-  return (
-    &lt;li className="item">
-      {itemContent}
-    &lt;/li>
-  );
-}
-
-export default function PackingList() {
-  return (
-    &lt;section>
-      &lt;h1>Sally Ride's Packing List&lt;/h1>
-      &lt;ul>
-        &lt;Item
-          isPacked={true}
-          name="Space suit"
-        />
-        &lt;Item
-          isPacked={true}
-          name="Helmet with a golden leaf"
-        />
-        &lt;Item
-          isPacked={false}
-          name="Photo of Tam"
-        />
-      &lt;/ul>
-    &lt;/section>
-  );
-}
-            </pre>
-          </div>
-        </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <h3>List Rendering</h3>
-          <div class="col-sm-12 col-md-4">
-            <h4>Rendering Multiple Components</h4>
-            <pre class="pre">
-export const people = [{
-  id: 0, // Used in JSX as a key
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-  accomplishment: 'spaceflight calculations',
-  imageId: 'MK3eW3A'
-}, {
-  id: 1, // Used in JSX as a key
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-  accomplishment: 'discovery of Arctic ozone hole',
-  imageId: 'mynHUSa'
-}, {
-  id: 2, // Used in JSX as a key
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
-  accomplishment: 'electromagnetism theory',
-  imageId: 'bE7W1ji'
-}];
-
-export default function List() {
-    const listItems = people.map(person =>
+      <h3>List Rendering</h3>
+      <div class="col-sm-12 col-md-4">
+        <h4>Rendering HTML</h4>
+        <pre class="pre">
+function List() {
+  const listItems = people.map(person =>
       &lt;li key={person.id}>
-        &lt;img
-            src={getImageUrl(person)}
-            alt={person.name}
-        />
-        &lt;p>
-          &lt;b>{person.name}&lt;/b>
-            {' ' + person.profession + ' '}
-            known for {person.accomplishment}
-        &lt;/p>
+        &lt;p>{person.name}&lt;/p>
       &lt;/li>
   );
   return &lt;ul>{listItems}&lt;/ul>;
 }
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Extracting Components With Keys</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>Rendering components - map on JS</h4>
+        <pre class="pre">
 function ListItem(props) {
-  // There is no need to specify the key here:
-  return &lt;li>{props.value}&lt;/li>;
+  return &lt;li>{props.name}&lt;/li>;
 }
 
-function NumberList(props) {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number) =>
-    // Key should be specified inside the array.
-    &lt;ListItem key={number.toString()}
-      value={number} />
+function List() {
+  const listItems = people.map(person =>
+    &lt;ListItem key={person.id} name={person.name} />
   );
-  return (
-    &lt;ul>
-      {listItems}
-    &lt;/ul>
-  );
+  return &lt;ul>{listItems}&lt;/ul>;
 }
-
-const numbers = [1, 2, 3, 4, 5];
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(&lt;NumberList numbers={numbers} />);
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Keys Must Only Be Unique Among Siblings</h4>
-            <pre class="pre">
-function Blog(props) {
-  const sidebar = (
-    &lt;ul>
-      {props.posts.map((post) =>
-        &lt;li key={post.id}>
-          {post.title}
-        &lt;/li>
-      )}
-    &lt;/ul>
-  );
-  const content = props.posts.map((post) =>
-    &lt;div key={post.id}>
-      &lt;h3>{post.title}&lt;/h3>
-      &lt;p>{post.content}&lt;/p>
-    &lt;/div>
-  );
-  return (
-    &lt;div>
-      {sidebar}
-      &lt;hr />
-      {content}
-    &lt;/div>
-  );
-}
-
-const content = posts.map((post) =>
-  &lt;Post
-    key={post.id}
-    id={post.id}
-    title={post.title} />
-);
-
-const posts = [
-  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
-];
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(&lt;Blog posts={posts} />);
-            </pre>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <h4>Embedding map() in JSX</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>Rendering components - map on JSX</h4>
+        <pre class="pre">
 function ListItem(props) {
-  return &lt;li>{props.value}&lt;/li>;
+  return &lt;li>{props.name}&lt;/li>;
 }
 
-function NumberList(props) {
-  const numbers = props.numbers;
+function List() {
   return (
     &lt;ul>
-      {numbers.map((number) =>
-        &lt;ListItem key={number.toString()}
-                     value={number} />
+      {people.map(person =>
+        &lt;ListItem key={person.id} name={person.name} />
       )}
     &lt;/ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(&lt;NumberList numbers={numbers} />);
             </pre>
-          </div>
-        </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <h3>Fetching</h3>
-          <div class="col-sm-12 col-md-4">
-            <h4>fetch()</h4>
-            <pre class="pre">
-const fetchCatData = async () => {
-  const url = 'https://api.thecatapi.com/v1/breeds';
-  try {
-    const response = await fetch(url);
-    const date = await response.json();
-    console.log(1, date);
-  } catch (error) {
-    console.log(error);
-  }
-}
-console.log(2);
-fetchCatData();
-            </pre>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <h4>Axios RESTfull</h4>
-            <pre class="pre">
-import axios from "axios";
-import authHeader from "./auth-header";
-
-const API_URL = "http://localhost/";
-
-const getIndex = () => {
-  return axios.get(API_URL + "contact", { headers: authHeader() });
-};
-
-const store = (values) => {
-  const { username, email } = values;
-  return axios.post(API_URL + "contact/", {
-    name: username,
-    email
-  }, { headers: authHeader() });
-};
-
-const update = (values) => {
-  const { id, username, email } = values;
-  return axios.put(API_URL + "contact/" + id, {
-    name: username,
-    email
-  }, { headers: authHeader() });
-};
-
-const destroy = (values) => {
-  const { id, email } = values;
-  return axios({
-    method: 'DELETE',
-    url: API_URL + "contact/" + id,
-    headers: authHeader(),
-    data: { email }
-  })
-};
-
-export default {
-  getIndex,
-  store,
-  update,
-  destroy
-};
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <h3>Routing</h3>
-          <div class="col-sm-12 col-md-4">
-            <h4>React Router</h4>
-            <pre class="pre">
-$ npm i react-router-dom
-
-import React from 'react';
+      <h3>Routing</h3>
+      <div class="col-sm-12 col-md-6">
+        <h4>React Router</h4>
+        <pre class="pre">
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 function Nav() {
   return (
     &lt;nav>
-      &lt;h1>Logo&lt;/h1>
       &lt;ul>
         &lt;Link to="/">
           &lt;li>Home&lt;/li>
@@ -1107,23 +521,18 @@ function App() {
 }
 
 export default App;
-
             </pre>
-          </div>
-        </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <h3>Hooks</h3>
-          <p>Hooks are functions that let you “hook into” React state and lifecycle features from function components.</p>
+      <h3>Hooks</h3>
+      <p>Hooks are functions that let you “hook into” React state and lifecycle features from function components.</p>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>State A Component's Memory</h4>
-            <p>We call it inside a function component to add some local state to it. React will preserve this state between re-renders.</p>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>State A Component's Memory</h4>
+        <p>We call it inside a function component to add some local state to it. React will preserve this state between re-renders.</p>
+        <pre class="pre">
 App.js
 // 1. adding a state variable
 import { useState } from 'react';
@@ -1279,7 +688,7 @@ function submitForm(answer) {
   });
 }
 
-=========================================
+==========
 import { useState } from 'react';
 
 export default function Form() {
@@ -1391,7 +800,7 @@ export const sculptureList = [{
   alt: 'A gigantic metallic flower sculpture with reflective mirror-like petals and strong stamens.'
 }];
 
-=========================================
+==========
 <h4>Sharing State Between Components</h4>
 import { useState } from 'react';
 
@@ -1439,7 +848,7 @@ function Panel({
 }
 
 
-=========================================
+==========
 <h4>Preserving and Resetting State</h4>
 import { useState } from 'react';
 import Chat from './Chat.js';
@@ -1466,12 +875,12 @@ const contacts = [
 ];
 
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Effect</h4>
-            <p>The Effect Hook, useEffect, adds the ability to perform side effects from a function component. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a single API.</p>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>Effect</h4>
+        <p>The Effect Hook, useEffect, adds the ability to perform side effects from a function component. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a single API.</p>
+        <pre class="pre">
 Placing useEffect inside the component lets us access the count state variable (or any props) right from the effect.
 
 // 1. declare an Effect
@@ -1607,12 +1016,12 @@ export default function ChatRoom() {
 }
 
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Context</h4>
-            <p>Accepts a context object (the value returned from React.createContext) and returns the current context value for that context. When the nearest &lt;MyContext.Provider> above the component updates, this Hook will trigger a rerender with the latest context value passed to that MyContext provider.</p>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>Context</h4>
+        <p>Accepts a context object (the value returned from React.createContext) and returns the current context value for that context. When the nearest &lt;MyContext.Provider> above the component updates, this Hook will trigger a rerender with the latest context value passed to that MyContext provider.</p>
+        <pre class="pre">
 // 1. declare context
 import { createContext, useContext, useState } from 'react';
 
@@ -1709,7 +1118,7 @@ function Toolbar(props) {
 function ThemedButton() {
   const theme = useContext(ThemeContext);
   return (
-<!--    &lt;button style={{ background: theme.background, color: theme.foreground }}>-->
+          <!--    &lt;button style={{ background: theme.background, color: theme.foreground }}>-->
     &lt;button style={ background: theme.background, color: theme.foreground }>
       I am styled by theme context!
     &lt;/button>
@@ -1729,7 +1138,7 @@ function MyApp() {
   }
 
   return (
-<!--    &lt;AuthContext.Provider value={{ currentUser, login }}>-->
+          <!--    &lt;AuthContext.Provider value={{ currentUser, login }}>-->
     &lt;AuthContext.Provider value={ currentUser, login }>
       &lt;Page />
     &lt;/AuthContext.Provider>
@@ -1761,10 +1170,8 @@ function MyApp() {
 }
 
             </pre>
-          </div>
-
-        </div>
       </div>
+
     </div>
 
   </div>

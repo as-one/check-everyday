@@ -465,6 +465,72 @@ el.style.display = 'none';                      // hide tag
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Fetching</h2>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-lg-6">
+        <h3>fetch()</h3>
+        <pre class="pre">
+const fetchCatData = async () => {
+  const API_URL = 'https://localhost/';
+
+  try {
+    const response = await fetch(API_URL);
+    const date = await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+fetchCatData();
+            </pre>
+      </div>
+
+      <div class="col-sm-12 col-lg-6">
+        <h3>Axios RESTful</h3>
+        <pre class="pre">
+import axios from "axios";
+
+const API_URL = "http://localhost/";
+
+const getIndex = () => {
+  return axios.get(API_URL + "contact", { headers: authHeader() });
+};
+
+const store = (values) => {
+  const { username, email } = values;
+
+  return axios.post(API_URL + "contact/", {
+    name: username,
+    email
+  }, { headers: authHeader() });
+};
+
+const update = (values) => {
+  const { id, username, email } = values;
+
+  return axios.put(API_URL + "contact/" + id, {
+    name: username,
+    email
+  }, { headers: authHeader() });
+};
+
+const destroy = (values) => {
+  const { id, email } = values;
+
+  return axios({
+    method: 'DELETE',
+    url: API_URL + "contact/" + id,
+    headers: authHeader(),
+    data: { email }
+  });
+};
+          </pre>
+      </div>
     </div>
   </div>
 </template>
