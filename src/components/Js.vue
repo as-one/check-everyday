@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h2>The Language</h2>
+        <h2>Basics</h2>
       </div>
     </div>
 
