@@ -20,6 +20,7 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink class="header__nav-option" to="/ts">TS</RouterLink>
         <RouterLink class="header__nav-option" to="/vue">Vue</RouterLink>
         <RouterLink class="header__nav-option" to="/react">React</RouterLink>
+        <RouterLink class="header__nav-option" to="/sql">SQL</RouterLink>
       </nav>
     </div>
   </header>

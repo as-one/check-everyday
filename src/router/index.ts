@@ -5,6 +5,7 @@ import Js from "@/components/Js.vue";
 import Ts from "@/components/Ts.vue";
 import Vue from "@/components/Vue.vue";
 import React from "@/components/React.vue";
+import Sql from "@/components/Sql.vue";
 import Root from "@/components/Root.vue";
 
 const router = createRouter({
@@ -44,6 +45,11 @@ const router = createRouter({
       path: "/react",
       name: "react",
       component: React,
+    },
+    {
+      path: "/sql",
+      name: "sql",
+      component: Sql,
     },
   ],
 });
