@@ -87,7 +87,7 @@ import Dad from "@/Dad.vue";
 // Dad.vue
 
 &lt;template>
-  &lt;span>{{ GrandpaMessage }}&lt;/span>
+  &lt;span>{ { GrandpaMessage }}&lt;/span>
 &lt;/template>
 
 &lt;script setup>
@@ -186,7 +186,7 @@ import Child from "@/Child.vue";
 &lt;template>
   // Inline
   &lt;button @click="counter++">Add 1&lt;/button>
-  &lt;p>The button above has been clicked {{ counter }} times.&lt;/p>
+  &lt;p>The button above has been clicked { { counter }} times.&lt;/p>
 
   // Function
   &lt;button @click="greet">Greet&lt;/button>
