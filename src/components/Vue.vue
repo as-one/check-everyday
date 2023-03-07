@@ -1,59 +1,45 @@
-<template>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Basics</h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12 col-md-4">
-        <h3>Props</h3>
-        <h4>Assigning</h4>
-        <pre>
-&lt;template>
+<script setup>
+const content = {
+  propsAssigning: `
+< template>
   // Static
-  &lt;blog-post title="My journey with Vue" />
+  <blog-post title="My journey with Vue" />
 
   // Dynamic
-  &lt;blog-post :title="post.title"/>
-&lt;/template>
-            </pre>
-
-        <h4>Declaring - Composition API</h4>
-        <pre class="pre">
-&lt;script setup>
+  <blog-post :title="post.title"/>
+< /template>
+  `,
+  propsDeclaringCompositionApi: `
+< script setup>
 const props = defineProps(['foo']);
 
 console.log(props.foo);
-&lt;/script>
+< /script>
 
 OR
 
-&lt;script setup>
+< script setup>
 defineProps({
   title: String,
   likes: Number
 });
 
 console.log(props.likes);
-&lt;/script>
-            </pre>
-
-        <h4>Declaring - Options API</h4>
-        <pre class="pre">
-&lt;script>
+< /script>
+  `,
+  propsDeclaringOptionsApi: `
+< script>
 export default {
   props: ['foo'],
   setup(props) {
     console.log(props.foo);
   }
 }
-&lt;/script>
+< /script>
 
 OR
 
-&lt;script>
+< script>
 export default {
   props: {
     title: String,
@@ -63,69 +49,57 @@ export default {
     console.log(props.likes);
   }
 }
-&lt;/script>
-            </pre>
-      </div>
-
-      <div class="col-sm-12 col-md-4">
-        <h3>Sharing State</h3>
-        <h4>Top Down</h4>
-        <h5>Grandpa to Dad</h5>
-        <pre class="pre">
+< /script>
+`,
+  sharingStateTopDown: `
 // Grandpa.vue
 
-&lt;template>
-  &lt;dad grandpa-message="Hi from Grandpa" />
-&lt;/template>
+< template>
+  <dad grandpa-message="Hi from Grandpa" />
+< /template>
 
-&lt;script setup>
+< script setup>
 import Dad from "@/Dad.vue";
-&lt;/script>
+< /script>
 
 ==========
 
 // Dad.vue
 
-&lt;template>
-  &lt;span>{ { GrandpaMessage }}&lt;/span>
-&lt;/template>
+< template>
+  <span>{ { GrandpaMessage }}</span>
+< /template>
 
-&lt;script setup>
+< script setup>
   defineProps({
     GrandpaMessage: String,
   });
-&lt;/script>
-            </pre>
-      </div>
-
-      <div class="col-sm-12 col-md-4">
-        <h3>Sharing State</h3>
-        <h4>Bottom Up - Emits</h4>
-        <h5>Child to Dad</h5>
-        <pre class="pre">
+< /script>
+  `,
+  sharingStateBottomUp: `
 // Dad.vue
 
-&lt;template>
-  &lt;child @handleButton="showAlert" />
-&lt;/template>
+< template>
+  <child @handleButton="showAlert" />
+< /template>
 
-&lt;script setup>
+< script setup>
 import Child from "@/Child.vue";
 
 function showAlert(value) {
   alert(value);
 };
-&lt;/script>
+< /script>
 
 ==========
 
 // Child.vue
 
-&lt;template>
-  &lt;button @click="handleClick">Button&lt;/button>
-&lt;/template>
+< template>
+  <button @click="handleClick">Button</button>
+< /template>
 
-&lt;script setup>
+< script setup>
 import { defineEmits } from "vue";
 
 const emit = defineEmits(['handleButton']);
@@ -133,67 +107,55 @@ const emit = defineEmits(['handleButton']);
 function handleClick() {
   emit('handleButton', 'Clicked!');
 }
-&lt;/script>
-            </pre>
-
-        <h5>Child to Grandpa</h5>
-        <pre class="pre">
+< /script>
+  `,
+  sharingStateBottomUpChildToGrandpa: `
 // Grandpa.vue
 
-&lt;template>
-  &lt;dad @handleButton="showAlert" />
-&lt;/template>
+< template>
+  <dad @handleButton="showAlert" />
+< /template>
 
-&lt;script setup>
+< script setup>
 import Dad from "@/Dad.vue";
 
 function showAlert(value) {
   alert(value);
 };
-&lt;/script>
+< /script>
 
 ==========
 
 // Dad.vue
 
-&lt;template>
-  &lt;child />
-&lt;/template>
+< template>
+  <child />
+< /template>
 
-&lt;script setup>
+< script setup>
 import Child from "@/Child.vue";
-&lt;/script>
+< /script>
 
 ==========
 
 // Child.vue
 
-&lt;template>
-  &lt;button @click="$dad.$emit('handleButton', 'Clicked!')>Button&lt;/button>
-&lt;/template>
-            </pre>
-      </div>
-    </div>
+< template>
+  <button @click="$dad.$emit('handleButton', 'Clicked!')>Button</button>
+< /template>
+  `,
+  methodHandlers: `
+< template>
+// Inline
+<button @click="counter++">Add 1</button>
+<p>The button above has been clicked { { counter }} times.</p>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <h3>Events Handlers</h3>
-      </div>
+// Function
+<button @click="greet">Greet</button>
+<button @click="say('hello')">Say Hello</button>
+< /template>
 
-      <div class="col-sm-12 col-md-4">
-        <h4>Method Handlers</h4>
-        <pre class="pre">
-&lt;template>
-  // Inline
-  &lt;button @click="counter++">Add 1&lt;/button>
-  &lt;p>The button above has been clicked { { counter }} times.&lt;/p>
-
-  // Function
-  &lt;button @click="greet">Greet&lt;/button>
-  &lt;button @click="say('hello')">Say Hello&lt;/button>
-&lt;/template>
-
-&lt;script setup>
+< script setup>
 import { ref } from 'vue';
 
 const counter = ref(0);
@@ -206,149 +168,94 @@ function greet(event) {
 function say(message) {
   console.log(message);
 }
-&lt;/script>
-            </pre>
-      </div>
-
-      <div class="col-sm-12 col-md-4">
-        <h4>Event Modifiers</h4>
-        <pre class="pre">
-&lt;template>
-  &lt;a @click.stop="doThis">&lt;/a>
-  &lt;a @click.stop.prevent="doThat">&lt;/a>
-  &lt;div @click.self="myFunction">...&lt;/div>
-  &lt;form @submit.prevent="onSubmit">&lt;/form>
-&lt;/template>
-            </pre>
-      </div>
-
-      <div class="col-sm-12 col-md-4">
-        <h4>Key Modifiers</h4>
-        <pre class="pre">
-&lt;template>
-  &lt;input @keyup.enter="submit" />
-  &lt;input @keyup.page-down="onPageDown" />
-  &lt;input @keyup.delete="onDelete" /> // captures both "Delete" and "Backspace" keys
-&lt;/template>
-            </pre>
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <h3>Conditional Rendering</h3>
-          <div class="col-sm-12 col-md-4">
-            <h4>v-if</h4>
-            <pre class="pre">
-&lt;template v-if="ok">
-  &lt;h1>Title&lt;/h1>
-  &lt;p>Paragraph 1&lt;/p>
-  &lt;p>Paragraph 2&lt;/p>
-&lt;/template>
-        </pre>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <h4>v-else-if</h4>
-            <pre class="pre">
-&lt;template>
-  &lt;div v-if="type === 'A'">A&lt;/div>
-  &lt;div v-else-if="type === 'B'">B&lt;/div>
-  &lt;div v-else>Else&lt;/div>
-&lt;/template>
-            </pre>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <h4>v-show</h4>
-            <pre class="pre">
-&lt;template>
-  &lt;h1 v-show="ok">Hello!&lt;/h1>
-&lt;/template>
+< /script>
+  `,
+  methodEventModifiers: `
+< template>
+  <a @click.stop="doThis"></a>
+  <a @click.stop.prevent="doThat"></a>
+  <div @click.self="myFunction">...</div>
+  <form @submit.prevent="onSubmit"></form>
+< /template>
+  `,
+  methodKeyModifiers: `
+< template>
+  <input @keyup.enter="submit" />
+  <input @keyup.page-down="onPageDown" />
+  <input @keyup.delete="onDelete" /> // captures both "Delete" and "Backspace" keys
+< /template>
+  `,
+  conditionalVIf: `
+< template v-if="ok">
+  <h1>Title</h1>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+< /template>
+  `,
+  conditionalVIfElse: `
+< template>
+  <div v-if="type === 'A'">A</div>
+  <div v-else-if="type === 'B'">B</div>
+  <div v-else>Else</div>
+< /template>
+  `,
+  conditionalVShow: `
+< template>
+  <h1 v-show="ok">Hello!</h1>
+< /template>
 
 The v-show always renders in the DOM just toggling the CSS.
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-        <h3>List Rendering</h3>
-      </div>
-      <div class="col-sm-12 col-md-4">
-        <h4>v-for on Array</h4>
-        <pre class="pre">
-&lt;template>
-  &lt;li v-for="(item, index) in items" :key="item.message">
+  `,
+  listVForArray: `
+< template>
+  <li v-for="(item, index) in items" :key="item.message">
     { { item.message }}
-  &lt;/li>
-&lt;/template>
+  </li>
+< /template>
 
-&lt;script setup>
+< script setup>
 import { ref } from 'vue';
 
 const items = ref([
   { message: 'Foo' },
   { message: 'Bar' },
 ]);
-&lt;/script>
-            </pre>
-      </div>
-
-      <div class="col-sm-12 col-md-4">
-        <h4>v-for on Object</h4>
-        <pre class="pre">
-&lt;template>
-   &lt;ul>
-    &lt;li v-for="(value, key, index) in myObject" :key="index">
+< /script>
+  `,
+  listVForObject: `
+< template>
+   <ul>
+    <li v-for="(value, key, index) in myObject" :key="index">
       { { index }}. { { key }}: { { value }}
       // 0. title: My Title
       // 1. author: My Author
-    &lt;/li>
-  &lt;/ul>
-&lt;/template>
+    </li>
+  </ul>
+< /template>
 
-&lt;script setup>
+< script setup>
 import { reactive } from 'vue';
 
 const myObject = reactive({
   title: 'My Title',
   author: 'My Author',
 });
-&lt;/script>
-            </pre>
-      </div>
-
-      <div class="col-sm-12 col-md-4">
-        <h4>v-for on Component</h4>
-        <pre class="pre">
-&lt;my-component
+< /script>
+  `,
+  listVForComponent: `
+< my-component
   v-for="(item, index) in items"
   :item="item"
   :index="index"
   :key="item.id"
 />
-            </pre>
-      </div>
+  `,
+  templateRefsAccessing: `
+< template>
+  <input ref="input" />
+< /template>
 
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-        <h3>Template Refs ref=</h3>
-      </div>
-      <div class="col-sm-12 col-md-4">
-        <h4>Accessing</h4>
-        <pre class="pre">
-&lt;template>
-  &lt;input ref="input" />
-&lt;/template>
-
-&lt;script setup>
+< script setup>
 import { ref, onMounted } from 'vue';
 
 const input = ref(null);
@@ -356,20 +263,12 @@ const input = ref(null);
 onMounted(() => {
   input.value.focus();
 });
-&lt;/script>
-            </pre>
-      </div>
-    </div>
-
-    <div class="row">
-      <h3>Reactivity - ref() and reactive()</h3>
-
-      <div class="col-sm-12 col-md-6">
-        <h4>ref()</h4>
-        <pre class="pre">
+< /script>
+  `,
+  reactivityRef: `
 // Use for scalar types
 
-&lt;script setup>
+< script setup>
 import {ref} from 'vue';
 
 const title = ref('Title');
@@ -377,16 +276,12 @@ const price = ref(9.99);
 
 console.log(title.value);
 console.log(price.value);
-&lt;/script>
-            </pre>
-      </div>
-
-      <div class="col-sm-12 col-md-6">
-        <h4>reactive()</h4>
-        <pre class="pre">
+< /script>
+  `,
+  reactivityReactive: `
 // Use for compound types
 
-&lt;script setup>
+< script setup>
 import {reactive} from 'vue';
 
 const product = reactive({
@@ -395,20 +290,16 @@ const product = reactive({
 });
 
 console.log(product.title);
-&lt;/script>
-            </pre>
-      </div>
-
-      <div class="col-sm-12 col-md-6">
-        <h4>ref(): Reactive State</h4>
-        <pre class="pre">
-&lt;template>
-  &lt;button @click="increment">
+< /script>
+  `,
+  reactivityRefState: `
+< template>
+  <button @click="increment">
     { { count }}
-  &lt;/button>
-&lt;/template>
+  </button>
+< /template>
 
-&lt;script>
+< script>
 import { ref } from 'vue';
 
 const count = ref(0)
@@ -416,20 +307,16 @@ const count = ref(0)
 function increment() {
   count.value++
 }
-&lt;/script>
-            </pre>
-      </div>
-
-      <div class="col-sm-12 col-md-6">
-        <h4>reactive(): Reactive State</h4>
-        <pre class="pre">
-&lt;template>
-  &lt;button @click="increment">
+< /script>
+  `,
+  reactivityReactiveState: `
+< template>
+  <button @click="increment">
     { { state.count }}
-  &lt;/button>
-&lt;/template>
+  </button>
+< /template>
 
-&lt;script setup>
+< script setup>
 import { reactive } from 'vue';
 
 const state = reactive({ count: 0 });
@@ -437,24 +324,17 @@ const state = reactive({ count: 0 });
 function increment() {
   state.count++
 };
-&lt;/script>
-            </pre>
-      </div>
-    </div>
+< /script>
+  `,
+  routing: `
+< template>
+  <a href="#/">Home</a>
+  <a href="#/about">About</a>
+  <a href="#/not-found">Not Found Link</a>
+  <component :is="currentView" />
+< /template>
 
-    <div class="row">
-      <h3>Routing</h3>
-      <div class="col-sm-12 col-md-4">
-        <h4>Simple Routing from Scratch</h4>
-        <pre class="pre">
-&lt;template>
-  &lt;a href="#/">Home&lt;/a>
-  &lt;a href="#/about">About&lt;/a>
-  &lt;a href="#/non-existent-path">Broken Link&lt;/a>
-  &lt;component :is="currentView" />
-&lt;/template>
-
-&lt;script setup>
+< script setup>
 import { ref, computed } from 'vue';
 import { createRouter, createWebHistory } from "vue-router";
 import Home from './Home.vue';
@@ -494,38 +374,227 @@ const currentView = computed(() => {
   return routes[currentPath.value.slice(1) || '/'] || NotFound
 });
 
-&lt;/script>
+< /script>
 
 ==========
 App.vue
 
-&lt;template>
-  &lt;nav>
-    &lt;RouterLink to="/home">Home&lt;/RouterLink>
-    &lt;RouterLink to="/about">About&lt;/RouterLink>
-    &lt;RouterLink to="/not-found">NotFound&lt;/RouterLink>
-  &lt;/nav>
-&lt;/template>
+< template>
+  <nav>
+    <RouterLink to="/home">Home</RouterLink>
+    <RouterLink to="/about">About</RouterLink>
+    <RouterLink to="/not-found">NotFound</RouterLink>
+  </nav>
+< /template>
 
-&lt;script setup>
+< script setup>
 import { RouterLink, RouterView } from "vue-router";
-&lt;/script>
-            </pre>
-      </div>
+< /script>
+  `,
+  redirecting: `
+< template>< /template>
 
-      <div class="col-sm-12 col-md-4">
-        <h4>Redirecting</h4>
-        <pre class="pre">
-&lt;template>&lt;/template>
-
-&lt;script setup>
+< script setup>
 created() {
   this.$router.push('/my-path');
 }
-&lt;/script>
-            </pre>
+< /script>
+  `,
+}
+</script>
+
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Basics</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <h3>Props</h3>
+        <h4>Assigning</h4>
+        <pre>
+          {{content.propsAssigning}}
+        </pre>
+
+        <h4>Declaring - Composition API</h4>
+        <pre class="pre">
+          {{content.propsDeclaringCompositionApi}}
+        </pre>
+
+        <h4>Declaring - Options API</h4>
+        <pre class="pre">
+          {{content.propsDeclaringOptionsApi}}
+        </pre>
       </div>
 
+      <div class="col-sm-12 col-md-4">
+        <h3>Sharing State</h3>
+        <h4>Top Down</h4>
+        <h5>Grandpa to Dad</h5>
+        <pre class="pre">
+          {{content.sharingStateTopDown}}
+        </pre>
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <h3>Sharing State</h3>
+        <h4>Bottom Up - Emits</h4>
+        <h5>Child to Dad</h5>
+        <pre class="pre">
+          {{content.sharingStateBottomUp}}
+        </pre>
+
+        <h5>Child to Grandpa</h5>
+        <pre class="pre">
+          {{content.sharingStateBottomUpChildToGrandpa}}
+        </pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Events Handlers</h3>
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <h4>Method Handlers</h4>
+        <pre class="pre">
+          {{content.methodHandlers}}
+        </pre>
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <h4>Event Modifiers</h4>
+        <pre class="pre">
+          {{content.methodEventModifiers}}
+        </pre>
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <h4>Key Modifiers</h4>
+        <pre class="pre">
+          {{content.methodKeyModifiers}}
+        </pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <h3>Conditional Rendering</h3>
+          <div class="col-sm-12 col-md-4">
+            <h4>v-if</h4>
+            <pre class="pre">
+              {{content.conditionalVIf}}
+            </pre>
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+            <h4>v-else-if</h4>
+            <pre class="pre">
+              {{content.conditionalVIfElse}}
+            </pre>
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+            <h4>v-show</h4>
+            <pre class="pre">
+              {{content.conditionalVShow}}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>List Rendering</h3>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <h4>v-for on Array</h4>
+        <pre class="pre">
+          {{content.listVForArray}}
+        </pre>
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <h4>v-for on Object</h4>
+        <pre class="pre">
+          {{content.listVForObject}}
+        </pre>
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <h4>v-for on Component</h4>
+        <pre class="pre">
+          {{content.listVForComponent}}
+        </pre>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Template Refs ref=</h3>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <h4>Accessing</h4>
+        <pre class="pre">
+          {{content.templateRefsAccessing}}
+        </pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3>Reactivity - ref() and reactive()</h3>
+
+      <div class="col-sm-12 col-md-6">
+        <h4>ref()</h4>
+        <pre class="pre">
+          {{content.reactivityRef}}
+        </pre>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <h4>reactive()</h4>
+        <pre class="pre">
+          {{content.reactivityReactive}}
+        </pre>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <h4>ref(): Reactive State</h4>
+        <pre class="pre">
+          {{content.reactivityRefState}}
+        </pre>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <h4>reactive(): Reactive State</h4>
+        <pre class="pre">
+          {{content.reactivityReactiveState}}
+        </pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3>Routing</h3>
+      <div class="col-sm-12 col-md-6">
+        <h4>Simple Routing from Scratch</h4>
+        <pre class="pre">
+          {{content.routing}}
+        </pre>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <h4>Redirecting</h4>
+        <pre class="pre">
+          {{content.redirecting}}
+        </pre>
+      </div>
     </div>
   </div>
 </template>
