@@ -1,13 +1,13 @@
 <script setup>
 const content = {
   propsAssigning: `
-<template>
+< template>
   // Static
   <blog-post title="My journey with Vue" />
 
   // Dynamic
   <blog-post :title="post.title"/>
-</template>
+< /template>
   `,
   propsDeclaringCompositionApi: `
 < script setup>
@@ -54,9 +54,9 @@ export default {
   sharingStateTopDown: `
 // Grandpa.vue
 
-<template>
+< template>
   <dad grandpa-message="Hi from Grandpa" />
-</template>
+< /template>
 
 < script setup>
 import Dad from "@/Dad.vue";
@@ -66,9 +66,9 @@ import Dad from "@/Dad.vue";
 
 // Dad.vue
 
-<template>
+< template>
   <span>{ { GrandpaMessage }}</span>
-</template>
+< /template>
 
 < script setup>
   defineProps({
@@ -79,9 +79,9 @@ import Dad from "@/Dad.vue";
   sharingStateBottomUp: `
 // Dad.vue
 
-<template>
+< template>
   <child @handleButton="showAlert" />
-</template>
+< /template>
 
 < script setup>
 import Child from "@/Child.vue";
@@ -95,9 +95,9 @@ function showAlert(value) {
 
 // Child.vue
 
-<template>
+< template>
   <button @click="handleClick">Button</button>
-</template>
+< /template>
 
 < script setup>
 import { defineEmits } from "vue";
@@ -185,28 +185,28 @@ function say(message) {
   <input @keyup.delete="onDelete" /> // captures both "Delete" and "Backspace" keys
 < /template>
   `,
-  conditionalVif: `
+  conditionalVIf: `
 < template v-if="ok">
   <h1>Title</h1>
   <p>Paragraph 1</p>
   <p>Paragraph 2</p>
 < /template>
   `,
-  conditionalVifElse: `
+  conditionalVIfElse: `
 < template>
   <div v-if="type === 'A'">A</div>
   <div v-else-if="type === 'B'">B</div>
   <div v-else>Else</div>
 < /template>
   `,
-  conditionalVshow: `
+  conditionalVShow: `
 < template>
   <h1 v-show="ok">Hello!</h1>
 < /template>
 
 The v-show always renders in the DOM just toggling the CSS.
   `,
-  listVforArray: `
+  listVForArray: `
 < template>
   <li v-for="(item, index) in items" :key="item.message">
     { { item.message }}
@@ -222,7 +222,7 @@ const items = ref([
 ]);
 < /script>
   `,
-  listVforObject: `
+  listVForObject: `
 < template>
    <ul>
     <li v-for="(value, key, index) in myObject" :key="index">
@@ -242,7 +242,7 @@ const myObject = reactive({
 });
 < /script>
   `,
-  listVforComponent: `
+  listVForComponent: `
 < my-component
   v-for="(item, index) in items"
   :item="item"
@@ -488,21 +488,21 @@ created() {
           <div class="col-sm-12 col-md-4">
             <h4>v-if</h4>
             <pre class="pre">
-              {{content.conditionalVif}}
+              {{content.conditionalVIf}}
             </pre>
           </div>
 
           <div class="col-sm-12 col-md-4">
             <h4>v-else-if</h4>
             <pre class="pre">
-              {{content.conditionalVifElse}}
+              {{content.conditionalVIfElse}}
             </pre>
           </div>
 
           <div class="col-sm-12 col-md-4">
             <h4>v-show</h4>
             <pre class="pre">
-              {{content.conditionalVshow}}
+              {{content.conditionalVShow}}
             </pre>
           </div>
         </div>
@@ -516,21 +516,21 @@ created() {
       <div class="col-sm-12 col-md-4">
         <h4>v-for on Array</h4>
         <pre class="pre">
-          {{content.listVforArray}}
+          {{content.listVForArray}}
         </pre>
       </div>
 
       <div class="col-sm-12 col-md-4">
         <h4>v-for on Object</h4>
         <pre class="pre">
-          {{content.listVforObject}}
+          {{content.listVForObject}}
         </pre>
       </div>
 
       <div class="col-sm-12 col-md-4">
         <h4>v-for on Component</h4>
         <pre class="pre">
-          {{content.listVforComponent}}
+          {{content.listVForComponent}}
         </pre>
       </div>
 
