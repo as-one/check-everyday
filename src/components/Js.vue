@@ -51,7 +51,7 @@ Boolean()   // to boolean
           <div class="col-sm-12 col-md-4">
             <h4>Comparisons</h4>
             <pre class="pre">
-===
+==
 &lt;=
 &gt;=
 !=    // different
