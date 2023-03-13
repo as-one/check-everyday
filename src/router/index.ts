@@ -3,6 +3,7 @@ import Html from "@/components/Html.vue";
 import Css from "@/components/Css.vue";
 import Js from "@/components/Js.vue";
 import Ts from "@/components/Ts.vue";
+import Python from "@/components/Python.vue"
 import Vue from "@/components/Vue.vue";
 import React from "@/components/React.vue";
 import Sql from "@/components/Sql.vue";
@@ -35,6 +36,11 @@ const router = createRouter({
       path: "/ts",
       name: "ts",
       component: Ts,
+    },
+    {
+      path: "/python",
+      name: "python",
+      component: Python,
     },
     {
       path: "/vue",
