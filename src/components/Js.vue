@@ -62,15 +62,12 @@ Boolean()   // to boolean
             <h4>Conditional</h4>
             <pre class="pre">
 if () {
-
 } else
 if () {
-
 } else {
-
 }
 
-let name = (conditional) ? true : false;
+let name = conditional ? true : false;
             </pre>
 
             <h4>Logical Operators</h4>
@@ -82,10 +79,17 @@ let name = (conditional) ? true : false;
 ++	// +1
 --	// -1
             </pre>
+
+            <h4>Functions</h4>
+            <pre class="pre">
+function name() {}
+let name = function() {}
+let name = () =&gt; {}       // arrow function
+            </pre>
           </div>
 
           <div class="col-sm-12 col-md-4">
-            <h4>Loops</h4>
+            <h4>Loop</h4>
             <pre class="pre">
 switch {
   case 1:
@@ -96,34 +100,34 @@ switch {
     break;
 }
 
-let length = 20;
+const length = 20;
 for (let i = 0; i &lt; length; i++) {
-
 }
+            </pre>
 
-arrays.forEach(array =&gt; {
-  console.log(array);
+            <h4>Loop Arrays</h4>
+            <pre>
+[1,2,3].forEach((el, i) =&gt; {
+  console.log(el, i);
 });
 
-objects.forEach(object =&gt; {
-console.log(object);
-});
-
-Array.map()     // creates a new array
-Array.reduce()  // returns single value
-Array.find()    // returns the first passed element
-Array.filter()  // return filtered string
-Array.every()   // if all return true
-Array.some()    // if some return true
-Array.indexOf() // index of
+[1,2,3].map(el => {})        // new map
+[1,2,3].reduce((prev,next) => prev+next, 10) // 16
+[1,2,3].find(el => el > 1)   // 2
+[1,2,3].filter(el => el > 1) // [2, 3]
+[1,2,3].every(el => el > 1)  // false
+[1,2,3].some(el => el > 1)   // true
+[1,2,3].indexOf(1)           // 0
             </pre>
             <a target="_blank" href="https://www.w3schools.com/js/js_array_iteration.asp">W3Schools' JS Array Iteration</a>
 
-            <h4>Functions</h4>
-            <pre class="pre">
-function name() {}
-let name = function() {}
-let name = () =&gt; {}       // arrow function
+            <h4>Loop Objects</h4>
+            <pre>
+const obj = {a: 1, b: 2, c: 3};
+for (let o in obj) {
+    const key = o; // a, b, c
+    const value = obj[o]; // 1, 2, 3
+}
             </pre>
           </div>
         </div>
@@ -136,9 +140,9 @@ let name = () =&gt; {}       // arrow function
         <div class="row">
           <div class="col-sm-12">
             <h4>Coding Style</h4>
-            <a style="display: block;" target="_blank" href="https://prettier.io/">Prettier</a>
-            <a style="display: block;" target="_blank" href="https://eslint.org/">ESLint</a>
             <a style="display: block;" target="_blank" href="https://javascript.info/coding-style">JS Info's Coding Style</a>
+            <a style="display: block;" target="_blank" href="https://eslint.org/">ESLint</a>
+            <a style="display: block;" target="_blank" href="https://prettier.io/">Prettier</a>
 
             <h4>Comments</h4>
             <pre class="pre">
@@ -148,18 +152,23 @@ let name = () =&gt; {}       // arrow function
 Block
 */
             </pre>
-          </div>
-        </div>
 
-        <h3>Objects</h3>
-        <div class="row">
-          <div class="col-sm-12">
-            <h4></h4>
+            <h3>Classes</h3>
             <pre class="pre">
-let newObject = {
-  key: "value",
-  key2: "value2"
-};
+class Example {
+  // 1. let const
+  // 2. functions
+  // 3. render() || init()
+}
+            </pre>
+
+            <h3>Modules</h3>
+            <pre class="pre">
+// index.js
+import Logo from './logo.js';
+
+// logo.js
+export default Logo;
             </pre>
           </div>
         </div>
@@ -171,13 +180,21 @@ let newObject = {
           <div class="col-sm-12">
             <h4>Array</h4>
             <pre class="pre">
-let newArray = ["value", "value2"];
+let newArray = ["one", "two"];
             </pre>
 
-            <h4>Date</h4>
-            <pre class="pre">
-let date = new Date();
+            <h4>Objects</h4>
+            <div class="row">
+              <div class="col-sm-12">
+                <h4></h4>
+                <pre class="pre">
+let newObject = {
+  key: "value",
+  key2: "value2"
+};
             </pre>
+              </div>
+            </div>
 
             <h4>JSON</h4>
             <pre class="pre">
@@ -186,28 +203,10 @@ let date = new Date();
   "key2": "value2"
 }
             </pre>
-          </div>
-        </div>
 
-        <h3>Classes</h3>
-        <div class="row">
-          <div class="col-sm-12">
+            <h4>Date</h4>
             <pre class="pre">
-class Example {
-  // 1. let const
-  // 2. functions
-  // 3. render() || init()
-}
-            </pre>
-          </div>
-        </div>
-
-        <h3>Modules</h3>
-        <div class="row">
-          <div class="col-sm-12">
-            <pre class="pre">
-export default Logo;          // in file logo.js
-import Logo from './logo.js'; // in file index.js
+let date = new Date();
             </pre>
           </div>
         </div>
@@ -245,6 +244,9 @@ async function runNewPromise() {
   console.log(response);
 }
 runNewPromise();
+
+// shortest Promise ever
+await (new Promise((res) => res("ok"))) // ok
             </pre>
           </div>
         </div>
