@@ -128,7 +128,7 @@ for n in range(3):
 {0:"zero", 1:"one"}.get(val, "default")
             </pre>
 
-            <h4>Loop Arrays</h4>
+            <h4>Loop Compounds</h4>
             <h5>map()</h5>
             <pre class="pre">
 numbers = [1, 2, 3, 4, 5]
