@@ -3,6 +3,7 @@ import Root from "@/components/Root.vue";
 import AppSec from "@/components/AppSec.vue";
 import Architecture from "@/components/Architecture.vue";
 import Css from "@/components/Css.vue";
+import DevOps from "@/components/DevOps.vue";
 import Go from "@/components/Go.vue";
 import Html from "@/components/Html.vue";
 import Js from "@/components/Js.vue";
@@ -36,6 +37,11 @@ const router = createRouter({
       path: "/css",
       name: "css",
       component: Css,
+    },
+    {
+      path: "/devops",
+      name: "devops",
+      component: DevOps,
     },
     {
       path: "/go",

@@ -28,6 +28,7 @@ import { RouterLink, RouterView } from "vue-router";
 
         <RouterLink class="header__nav-option" to="/theory">Theory</RouterLink>
         <RouterLink class="header__nav-option" to="/architecture">Arch</RouterLink>
+        <RouterLink class="header__nav-option" to="/devops">DevOps</RouterLink>
         <RouterLink class="header__nav-option" to="/app-sec">AppSec</RouterLink>
       </nav>
     </div>
