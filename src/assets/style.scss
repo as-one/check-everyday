@@ -71,9 +71,19 @@ a {
   font-family: var(--fontFamily_avantGardeBold);
 }
 
-table {
+table, td {
   border: 1px solid;
   border-spacing: 2px;
+  border-collapse: collapse;
+  padding: 5px 10px;
+}
+
+td ul {
+  margin: 0;
+}
+
+span.underline {
+  text-decoration: underline;
 }
 
 .pre {

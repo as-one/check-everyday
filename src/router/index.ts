@@ -1,13 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Html from "@/components/Html.vue";
+import Root from "@/components/Root.vue";
+import AppSec from "@/components/AppSec.vue";
+import Architecture from "@/components/Architecture.vue";
 import Css from "@/components/Css.vue";
+import Go from "@/components/Go.vue";
+import Html from "@/components/Html.vue";
 import Js from "@/components/Js.vue";
-import Ts from "@/components/Ts.vue";
+import Php from "@/components/Php.vue"
 import Python from "@/components/Python.vue"
-import Vue from "@/components/Vue.vue";
 import React from "@/components/React.vue";
 import Sql from "@/components/Sql.vue";
-import Root from "@/components/Root.vue";
+import Theory from "@/components/Theory.vue";
+import Ts from "@/components/Ts.vue";
+import Vue from "@/components/Vue.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,9 +23,14 @@ const router = createRouter({
       component: Root,
     },
     {
-      path: "/html",
-      name: "html",
-      component: Html,
+      path: "/app-sec",
+      name: "app-sec",
+      component: AppSec,
+    },
+    {
+      path: "/architecture",
+      name: "architecture",
+      component: Architecture,
     },
     {
       path: "/css",
@@ -28,24 +38,29 @@ const router = createRouter({
       component: Css,
     },
     {
+      path: "/go",
+      name: "go",
+      component: Go,
+    },
+    {
+      path: "/html",
+      name: "html",
+      component: Html,
+    },
+    {
       path: "/js",
       name: "js",
       component: Js,
     },
     {
-      path: "/ts",
-      name: "ts",
-      component: Ts,
+      path: "/php",
+      name: "php",
+      component: Php,
     },
     {
       path: "/python",
       name: "python",
       component: Python,
-    },
-    {
-      path: "/vue",
-      name: "vue",
-      component: Vue,
     },
     {
       path: "/react",
@@ -56,6 +71,21 @@ const router = createRouter({
       path: "/sql",
       name: "sql",
       component: Sql,
+    },
+    {
+      path: "/theory",
+      name: "theory",
+      component: Theory,
+    },
+    {
+      path: "/ts",
+      name: "ts",
+      component: Ts,
+    },
+    {
+      path: "/vue",
+      name: "vue",
+      component: Vue,
     },
   ],
 });

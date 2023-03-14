@@ -18,10 +18,17 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink class="header__nav-option" to="/css">CSS</RouterLink>
         <RouterLink class="header__nav-option" to="/js">JS</RouterLink>
         <RouterLink class="header__nav-option" to="/ts">TS</RouterLink>
-        <RouterLink class="header__nav-option" to="/python">Python</RouterLink>
         <RouterLink class="header__nav-option" to="/vue">Vue</RouterLink>
         <RouterLink class="header__nav-option" to="/react">React</RouterLink>
+
+        <RouterLink class="header__nav-option" to="/python">Python</RouterLink>
+        <RouterLink class="header__nav-option" to="/go">Go</RouterLink>
+        <RouterLink class="header__nav-option" to="/php">PHP</RouterLink>
         <RouterLink class="header__nav-option" to="/sql">SQL</RouterLink>
+
+        <RouterLink class="header__nav-option" to="/theory">Theory</RouterLink>
+        <RouterLink class="header__nav-option" to="/architecture">Arch</RouterLink>
+        <RouterLink class="header__nav-option" to="/app-sec">AppSec</RouterLink>
       </nav>
     </div>
   </header>
