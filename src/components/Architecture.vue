@@ -1,5 +1,5 @@
 <template>
-  <section class="content container">
+  <section class="container">
     <div class="row">
       <div class="col-sm-12">
         <h2>Paradigms</h2>
