@@ -62,8 +62,7 @@ Boolean()   // to boolean
             <h4>Conditional</h4>
             <pre class="pre">
 if () {
-} else
-if () {
+} else if () {
 } else {
 }
 

@@ -77,7 +77,7 @@
     <div class="row">
       <div class="col-sm-12 col-md-6">
         <pre class="pre">
-&lt;a href="http://www.example.com">Link to example.com&lt;/lt;a>
+&lt;a href="http://www.example.com">Link to example.com&lt;/a>
 &lt;a href="#heading4">Go to Heading 4&lt;/a> &lt;h4 id="heading4">Heading 4&lt;/h4>
 &lt;a href="/about">About&lt;/a>
 &lt;a href="tel:112233445566">Call Us&lt;/a>

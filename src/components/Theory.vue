@@ -22,6 +22,9 @@
           <tr>
             <td>snake_case</td>
           </tr>
+          <tr>
+            <td>strHungarianNotation</td>
+          </tr>
         </table>
 
         <h3>Special Operators</h3>
@@ -234,10 +237,6 @@
         <h3>Function Types</h3>
         <table>
           <tr>
-            <td></td>
-            <td>Example</td>
-          </tr>
-          <tr>
             <td>Function</td>
             <td>
               <pre>
@@ -388,11 +387,13 @@ func f(x) {
           <tr>
             <td>UUID</td>
             <td>Universally Unique Identifier</td>
+            <td></td>
             <td>2e1a887d-991a-4760-b035-bd7766e1f498</td>
           </tr>
           <tr>
             <td>KSUID</td>
             <td>Key-Sortable Unique Identifier</td>
+            <td>has a timestamp<br/>at its beginning</td>
             <td>0ujsszwN8NRY24YaXiTIE2VWDTS</td>
           </tr>
         </table>

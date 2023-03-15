@@ -174,8 +174,8 @@ let varUndefined: undefined;  // useless
           </div>
         </div>
         <pre class="pre">
-let varArray: unknown[] = ['one', true, 3];
-let varArray: any[] = ['one', true, 3];
+const varArray: unknown[] = ['one', true, 3];
+const varArray: any[] = ['one', true, 3];
         </pre>
       </div>
 
@@ -192,7 +192,7 @@ let varArray: any[] = ['one', true, 3];
           </div>
         </div>
         <pre class="pre">
-let varFunction: {} = () => { };
+const varFunction: {} = () => {};
         </pre>
 
         <div class="row">
@@ -201,7 +201,7 @@ let varFunction: {} = () => { };
           </div>
         </div>
         <pre class="pre">
-let varFunctionArray = function (varArray: string[]) {
+const varFunctionArray = function (varArray: string[]) {
   return varArray;
 }
 
@@ -214,12 +214,11 @@ varFunctionArray(['one', 'two', 'three']);
           </div>
         </div>
         <pre class="pre">
-let varFunctionObject = function (param1: string, param2: {}) { }
+const varFunctionObject = function (param1: string, param2: {}) { }
 
 varFunctionObject('one', { one: 'one', two: true, three: 3 });
         </pre>
       </div>
-
     </div>
 
     <div class="row">
@@ -238,14 +237,15 @@ varFunctionObject('one', { one: 'one', two: true, three: 3 });
             </div>
             <pre class="pre">
 interface AClass {
-  varOne: string;
-  varTwo: boolean;
-  varThree?: number;
+  one: string;
+  two: boolean;
+  three?: number;
 }
 
 class aClass implements AClass {
-  varOne = 'one';
-  varTwo = true;
+  public one: string = 'one';
+  public two: boolean = true;
+  private four: string = 'four';
 }
             </pre>
 
@@ -255,20 +255,20 @@ class aClass implements AClass {
               </div>
             </div>
             <pre class="pre">
-interface OldClass {
-  varZero: number;
+interface IOldClass {
+  zero: number;
 }
 
-interface NewClass extends OldClass {
-  varOne: string;
-  varTwo: boolean;
-  varThree?: number;
+interface INewClass extends IOldClass {
+  one: string;
+  two: boolean;
+  three?: number;
 }
 
-class newClass implements NewClass {
-  varZero = 0;
-  varOne = 'one';
-  varTwo = true;
+class NewClass implements INewClass {
+  zero: number = 0;
+  one: string = 'one';
+  two: boolean = true;
 }
             </pre>
 
@@ -279,37 +279,39 @@ class newClass implements NewClass {
             </div>
             <pre class="pre">
 interface IHybridClass {
-  varOne: string;
-  varTwo: {
+  one: string;
+  two: {
     twoOne: boolean;
   };
-  varThree(varThreeOne: string, varThreeTwo: boolean): number;
-  varFour({ varFourOne, varFourTwo }: { varFourOne: string, varFourTwo: boolean }): number;
+  three(threeOne: string, threeTwo: boolean): number;
+  four({ fourOne, fourTwo }: { fourOne: string, fourTwo: boolean }): number;
 }
 
 class HybridClass implements IHybridClass {
-  varOne = 'one';
+  one = 'one';
 
-  varTwo = {
+  two = {
     twoOne: true
   };
 
-  varThree = (varThreeOne: string, varThreeTwo: boolean) => {
+  three = (threeOne: string, threeTwo: boolean) => {
     return 3;
   };
-  testingVarThree() {
-    let three = this.varThree('one', true);
+
+  testingThree() {
+    let three = this.three('one', true);
   }
 
-  varFour = function ({
-    varFourOne,
-    varFourTwo
-  }: { varFourOne: string, varFourTwo: boolean }) {
-    console.log(varFourOne, varFourTwo);
+  four = function ({
+    fourOne,
+    fourTwo
+  }: { fourOne: string, fourTwo: boolean }) {
+    console.log(fourOne, fourTwo);
     return 4;
   }
-  testingVarFour() {
-    let four = this.varFour({ varFourOne: 'four', varFourTwo: true });
+
+  testingFour() {
+    let four = this.four({ fourOne: 'four', fourTwo: true });
   }
 }
             </pre>
@@ -372,7 +374,12 @@ loggingIdentity2({ length: 1 });
         <div class="row">
           <div class="col-sm-12">
             <pre class="pre">
-// Later
+enum TodoState {
+  New = 1,
+  Active,
+  Complete,
+  Deleted
+}
             </pre>
           </div>
         </div>
@@ -380,16 +387,79 @@ loggingIdentity2({ length: 1 });
       <div class="col-sm-12 col-md-6">
         <div class="row">
           <div class="col-sm-12">
-            <h3>Literals and unions</h3>
+            <h3>Data Types</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <pre class="pre">
-// Later
-Literal Types: ie. 'Value1' | 'Value2'
-Union Types:   ie. boolean | string
-            </pre>
+            <table>
+              <tr>
+                <td>Literal Union</td>
+                <td>'one' | 'two'</td>
+              </tr>
+              <tr>
+                <td>Type Union</td>
+                <td>boolean | string</td>
+              </tr>
+              <tr>
+                <td>any</td>
+                <td>avoid it</td>
+              </tr>
+              <tr>
+                <td>unknown</td>
+                <td>avoid it</td>
+              </tr>
+              <tr>
+                <td>never</td>
+                <td>when a function returns an error</td>
+              </tr>
+              <tr>
+                <td>Omit</td>
+                <td>
+                  <p>Opposite of Pick</p>
+                  <pre class="pre">
+interface Todo {
+  one: string;
+  two: string;
+}
+
+const todo: Omit&lt;Todo, "one"&gt; = {
+  two: "Two"
+}
+                  </pre>
+                </td>
+              </tr>
+              <tr>
+                <td>Pick</td>
+                <td>
+                  <p>Opposite of Omit</p>
+                  <pre class="pre">
+interface Todo {
+  one: string;
+  two: string;
+}
+
+const todo: Omit&lt;Todo, "one"&gt; = {
+  one: "One"
+}
+                  </pre>
+                </td>
+              </tr>
+              <tr>
+                <td>Partial</td>
+                <td>
+                  <p>All properties are optional</p>
+                  <pre class="pre">
+interface Todo {
+  one: string;
+  two: string;
+}
+
+const todo: Partial&lt;Todo&gt; = {}
+                  </pre>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
