@@ -449,8 +449,40 @@ typeof el;                                      // type
 Math.ceil(Math.random() * 10);                  // random between 0 and 10
 
 el.style.display = 'block';                     // show tag
-el.style.display = 'none';                      // hide tag
-            </pre>
+el.style.display = 'none';                      // hide tag</pre>
+
+            <h4>Truthy/Falsey</h4>
+            <table>
+              <tr>
+                <td>Truthy</td>
+                <td>Falsey</td>
+              </tr>
+              <tr>
+                <td>
+                  <pre class="pre">
+if (true)
+if ({})
+if ([])
+if (42)
+if ("0")
+if ("false")
+if (new Date())
+if (-42)
+if (12n)</pre>
+                </td>
+                <td>
+                  <pre class="pre">
+if (false)
+if (null)
+if (undefined)
+if (0)
+if (-0)
+if (0n)
+if (NaN)
+if ("")</pre>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
