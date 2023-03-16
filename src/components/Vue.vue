@@ -404,12 +404,8 @@ created() {
 </script>
 
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Basics</h2>
-      </div>
-    </div>
+  <div class="container content">
+    <h2>Basics</h2>
 
     <div class="row">
       <div class="col-sm-12 col-md-4">

@@ -1,10 +1,6 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Basics</h2>
-      </div>
-    </div>
+  <div class="container content">
+    <h2>Basics</h2>
 
     <div class="row">
       <div class="col-sm-12 col-md-6">
@@ -144,11 +140,7 @@ addFromObject({ x: 1, y: 2 }); // 3
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Advanced</h2>
-      </div>
-    </div>
+    <h2>Advanced</h2>
 
     <div class="row">
       <div class="col-sm-12 col-md-6">
@@ -467,11 +459,7 @@ const todo: Partial&lt;Todo&gt; = {}
 
 
 
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Applied</h2>
-      </div>
-    </div>
+    <h2>Applied</h2>
 
     <div class="row">
       <div class="col-sm-12">

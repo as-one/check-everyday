@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container content">
     <h1 class="welcome">Hello! Click on the language you want to review.</h1>
   </section>
 </template>

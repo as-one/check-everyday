@@ -1,10 +1,6 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Basics</h2>
-      </div>
-    </div>
+  <div class="container content">
+    <h2>Basics</h2>
 
     <div class="row">
       <div class="col-sm-12">
@@ -252,11 +248,7 @@ await (new Promise((res) => res("ok"))) // ok
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Browser</h2>
-      </div>
-    </div>
+    <h2>Browser</h2>
 
     <div class="row">
       <div class="col-sm-12 col-lg-6">
@@ -388,11 +380,7 @@ el === newEl;                                   // matches
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Additional</h2>
-      </div>
-    </div>
+    <h2>Additional</h2>
 
     <div class="row">
       <div class="col-sm-12">
@@ -467,11 +455,7 @@ el.style.display = 'none';                      // hide tag
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <h2>Fetching</h2>
-        </div>
-      </div>
+      <h2>Fetching</h2>
 
       <div class="col-sm-12 col-lg-6">
         <h3>fetch()</h3>

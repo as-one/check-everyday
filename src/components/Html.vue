@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <h1>HTML</h1>
-
+  <div class="container content">
     <h2>Basics</h2>
 
     <h3>Doctype</h3>

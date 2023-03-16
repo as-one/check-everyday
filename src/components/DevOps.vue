@@ -1,10 +1,6 @@
 <template>
-  <section class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>CI/CD</h2>
-      </div>
-    </div>
+  <section class="container content">
+    <h2>CI/CD</h2>
 
     <div class="row">
       <div class="col-sm-12">
@@ -12,9 +8,9 @@
         <table>
           <tr>
             <td></td>
-            <td>Automated build<br/>Automated tests</td>
-            <td>Auto staging to Test env<br/>Auto staging to QA env</td>
-            <td>Automated staging to Prod env</td>
+            <td>Automated:<br/>build + tests</td>
+            <td>Automated staging to:<br/>Test env + QA env</td>
+            <td>Automated staging to:<br/>Prod env</td>
           </tr>
           <tr>
             <td>Continuous Integration</td>
@@ -61,20 +57,16 @@
           <tr>
             <td></td>
             <td>GitHub repo</td>
-            <td>Github CI<br/>Jenkins CI</td>
-            <td>Github CI<br/>Jenkins CI</td>
-            <td>Vercel</td>
-            <td>Vercel</td>
+            <td>Github Actions<br/>Jenkins CI<br/>Vercel</td>
+            <td>Github Actions<br/>Jenkins CI<br/>Vercel</td>
+            <td>Github Actions + AWS<br/>Vercel</td>
+            <td></td>
           </tr>
         </table>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>AWS</h2>
-      </div>
-    </div>
+    <h2>AWS</h2>
 
     <div class="row">
       <div class="col-sm-12 col-md-6">

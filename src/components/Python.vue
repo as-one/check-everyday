@@ -1,10 +1,6 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Basics</h2>
-      </div>
-    </div>
+  <div class="container content">
+    <h2>Basics</h2>
 
     <h3>Fundamentals</h3>
 
@@ -168,11 +164,7 @@ total # 15
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Advanced</h2>
-      </div>
-    </div>
+    <h2>Advanced</h2>
 
     <div class="row">
       <div class="col-sm-12 col-md-4">

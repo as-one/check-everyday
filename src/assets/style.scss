@@ -51,6 +51,10 @@ h1 {
   font-family: var(--fontFamily_avantGardeBold);
 }
 
+h2 {
+  margin-top: 40px;
+}
+
 h2,
 h4 {
   font-family: var(--fontFamily_avantGardeBook);
@@ -84,6 +88,10 @@ td ul {
 
 span.underline {
   text-decoration: underline;
+}
+
+.m0 {
+  margin: 0;
 }
 
 .pre {

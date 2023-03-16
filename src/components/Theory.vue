@@ -1,10 +1,6 @@
 <template>
-  <section class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Foundations</h2>
-      </div>
-    </div>
+  <section class="container content">
+    <h2>Foundations</h2>
 
     <div class="row">
       <div class="col-sm-12 col-md-4">

@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
+  <div class="container content">
     <div class="row">
       <div class="col-sm-12 col-md-4">
-        <h2>Basics</h2>
+        <h2 class="m0">Basics</h2>
 
         <h3>CSS Design Patterns</h3>
         <ul>
@@ -119,7 +119,7 @@
       </div>
 
       <div class="col-sm-12 col-md-4">
-        <h2>Structure</h2>
+        <h2 class="m0">Structure</h2>
 
         <h3 class="h4">Grid</h3>
         <div class="container container_col_two">
@@ -160,7 +160,7 @@
               <li><strong>flex-direction</strong>: row | column</li>
               <li><strong>flex-wrap</strong>: nowrap || wrap; // nowrap disregard width.</li>
               <li>flex-flow: flex-direction + flex-wrap</li>
-              <li><strong>justify-content</strong>: x axis</li>
+              <li><strong>justify-content</strong>:; x axis</li>
               <li><strong>align-content</strong>:; y axis</li>
               <li>align-items:; // y axis</li>
             </ul>
@@ -299,7 +299,7 @@
       </div>
 
       <div class="col-sm-12 col-md-4">
-        <h2>Details</h2>
+        <h2 class="m0">Details</h2>
 
         <h3>Overflow</h3>
         <ul>
