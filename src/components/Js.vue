@@ -135,9 +135,9 @@ for (let o in obj) {
         <div class="row">
           <div class="col-sm-12">
             <h4>Coding Style</h4>
-            <a style="display: block;" target="_blank" href="https://javascript.info/coding-style">JS Info's Coding Style</a>
-            <a style="display: block;" target="_blank" href="https://eslint.org/">ESLint</a>
-            <a style="display: block;" target="_blank" href="https://prettier.io/">Prettier</a>
+            <a class="link" target="_blank" href="https://javascript.info/coding-style">JS Info's Coding Style</a>
+            <a class="link" target="_blank" href="https://eslint.org/">ESLint</a>
+            <a class="link" target="_blank" href="https://prettier.io/">Prettier</a>
 
             <h4>Comments</h4>
             <pre class="pre">

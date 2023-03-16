@@ -206,7 +206,7 @@
           </tr>
         </table>
 
-        <a style="display: block;" target="_blank" href="http://www.unitconversion.org/numbers/base-2-to-base-16-conversion.html">Binary to Hex</a>
+        <a class="link" target="_blank" href="http://www.unitconversion.org/numbers/base-2-to-base-16-conversion.html">Binary to Hex</a>
 
         <h3>Unsigned vs Signed Integers</h3>
         <table>
@@ -376,7 +376,7 @@ func f(x) {
             </td>
           </tr>
         </table>
-        <a style="display: block;" target="_blank" href="https://semver.org/">SemVer</a>
+        <a class="link" target="_blank" href="https://semver.org/">SemVer</a>
 
         <h3>IDs</h3>
         <table>

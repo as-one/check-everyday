@@ -47,7 +47,7 @@ tuple() # tuple('str') = ('s', 't', 'r')
             </pre>
 
             <h4>Static Type Analyzer</h4>
-            <a style="display: block;" target="_blank" href="https://mypy-lang.org/">MyPy</a>
+            <a class="link" target="_blank" href="https://mypy-lang.org/">MyPy</a>
             <pre class="pre">
 a: int = 10
 def fib(n: int) -> Iterator[int]:
@@ -172,7 +172,7 @@ total # 15
         <div class="row">
           <div class="col-sm-12">
             <h4>Coding Style</h4>
-            <a style="display: block;" target="_blank" href="https://pep8.org/">PEP 8</a>
+            <a class="link" target="_blank" href="https://pep8.org/">PEP 8</a>
 
             <h4>Comments</h4>
             <pre class="pre">
@@ -180,8 +180,8 @@ total # 15
             </pre>
 
             <h4>Packages</h4>
-            <a style="display: block;" target="_blank" href="https://pypi.org/">PyPi - Package Index</a>
-            <a style="display: block;" target="_blank" href="https://pypi.org/project/pip/">pip - Package Manager</a>
+            <a class="link" target="_blank" href="https://pypi.org/">PyPi - Package Index</a>
+            <a class="link" target="_blank" href="https://pypi.org/project/pip/">pip - Package Manager</a>
           </div>
         </div>
 
@@ -382,7 +382,7 @@ now = datetime.datetime.now()
 x = datetime.datetime(2010, 1, 30)
 x.strftime("%B") # January
             </pre>
-            <a style="display: block;" target="_blank" href="https://www.w3schools.com/python/python_datetime.asp">Date Format</a>
+            <a class="link" target="_blank" href="https://www.w3schools.com/python/python_datetime.asp">Date Format</a>
 
             <h4>JSON</h4>
             <pre class="pre">

@@ -14,6 +14,8 @@ import { RouterLink, RouterView } from "vue-router";
       </div>
 
       <nav class="header__nav container">
+        <RouterLink class="header__nav-option" to="/theory">Theory</RouterLink>
+
         <RouterLink class="header__nav-option" to="/html">HTML</RouterLink>
         <RouterLink class="header__nav-option" to="/css">CSS</RouterLink>
         <RouterLink class="header__nav-option" to="/js">JS</RouterLink>
@@ -26,7 +28,6 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink class="header__nav-option" to="/php">PHP</RouterLink>
         <RouterLink class="header__nav-option" to="/sql">SQL</RouterLink>
 
-        <RouterLink class="header__nav-option" to="/theory">Theory</RouterLink>
         <RouterLink class="header__nav-option" to="/architecture">Arch</RouterLink>
         <RouterLink class="header__nav-option" to="/devops">DevOps</RouterLink>
         <RouterLink class="header__nav-option" to="/app-sec">AppSec</RouterLink>
