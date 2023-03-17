@@ -24,8 +24,8 @@ const router = createRouter({
       component: Root,
     },
     {
-      path: "/app-sec",
-      name: "app-sec",
+      path: "/appsec",
+      name: "appsec",
       component: AppSec,
     },
     {
