@@ -4,50 +4,30 @@
 
     <div class="row">
       <div class="col-sm-12 col-md-6">
-        <div class="row">
-          <div class="col-sm-12">
-            <h3>Types</h3>
-          </div>
-        </div>
+        <h3>Types</h3>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <h4>unknown & any</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <pre class="pre">
+        <h4>unknown & any</h4>
+        <pre class="pre">
 let varUnknown: unknown;
 let varAny: any;
-            </pre>
-          </div>
-        </div>
+        </pre>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <h4>string, boolean, number, array</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <pre class="pre">
+        <h4>string, boolean, number, array</h4>
+        <pre class="pre">
 let varString: string = "Hello World";
 let varBoolean: boolean = true;
 let varNumber: number = 10;
 let varArray: string[] = ['one', 'two', 'three'];
-            </pre>
-          </div>
-        </div>
+        </pre>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <h4>object (+optional, function)</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <pre class="pre">
+        <h4>object</h4>
+        <pre class="pre">
+const object: {[key: string]: any} = {}
+object.key = "value";
+        </pre>
+
+        <h4>object (+optional, function)</h4>
+        <pre class="pre">
 let varObject: {
   one: string;
   two?: boolean; // optional
@@ -56,29 +36,19 @@ let varObject: {
   one: 'one',
   callback: () => { }
 };
-            </pre>
-          </div>
-        </div>
+        </pre>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <h4>object (+optional) + interface</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <pre class="pre">
+        <h4>object (+optional) + interface</h4>
+        <pre class="pre">
 interface IVarObject {
   one: string;
   two?: boolean; // optional
 }
 
-let varObject: IVarObject = {
+const varObject: IVarObject = {
   one: 'one'
 };
-            </pre>
-          </div>
-        </div>
+        </pre>
       </div>
       <div class="col-sm-12 col-md-6">
         <div class="row">

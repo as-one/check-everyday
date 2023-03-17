@@ -174,28 +174,35 @@ export default Logo;
         <div class="row">
           <div class="col-sm-12">
             <h4>Array</h4>
+            <h5>CRUD</h5>
             <pre class="pre">
-let newArray = ["one", "two"];
+const arr = ["one", "two"];  # C
+arr[0]                       # R # get value
+arr.indexOf('one')           # R # get key
+arr.unshift('three')         # U # add el as first
+arr.push('three')            # U # add el as last
+arr[0] = "new"               # U # update value
+arr.splice(0)                # D #
+arr.filter(el => el !== val) # D
+            </pre>
+            <pre class="pre">
             </pre>
 
             <h4>Objects</h4>
-            <div class="row">
-              <div class="col-sm-12">
-                <h4></h4>
-                <pre class="pre">
-let newObject = {
-  key: "value",
-  key2: "value2"
-};
+            <h5>CRUD</h5>
+            <pre class="pre">
+const obj = {k1: "k1"};      # C
+obj.k1                       # R # get value
+obj.k1 = 'new';              # U # update val
+obj.k2 = 'k2'                # U # new el
+delete obj.k1                # D # delete key
             </pre>
-              </div>
-            </div>
 
             <h4>JSON</h4>
             <pre class="pre">
 {
-  "key": "value",
-  "key2": "value2"
+  "k1": "v1",
+  "k2": "v2"
 }
             </pre>
 
@@ -270,7 +277,7 @@ newEl = document.createElement('div');                // create element
             <pre class="pre">
 document.addEventListener('DOMContentLoaded', () =&gt; {});  // ready
 el.addEventListener('click', () =&gt; {});                   // on
-el.removeEventListener();                                    // off Check MDN
+el.removeEventListener();                                 // off Check MDN
 window.addEventListener("resize", () =&gt; {});              // on resize
             </pre>
           </div>

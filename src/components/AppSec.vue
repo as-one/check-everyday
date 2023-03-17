@@ -554,51 +554,6 @@
         </table>
       </div>
       <div class="col-sm-12 col-md-3">
-        <h3>Proactive Controls</h3>
-        <table>
-          <tr>
-            <td>C1</td>
-            <td>Define Security Requirements</td>
-          </tr>
-          <tr>
-            <td>C2</td>
-            <td>Leverage Security Frameworks and Libraries</td>
-          </tr>
-          <tr>
-            <td>C3</td>
-            <td>Secure Database Access</td>
-          </tr>
-          <tr>
-            <td>C4</td>
-            <td>Encode and Escape Data</td>
-          </tr>
-          <tr>
-            <td>C5</td>
-            <td>Validate All Inputs</td>
-          </tr>
-          <tr>
-            <td>C6</td>
-            <td>Implement Digital Identity</td>
-          </tr>
-          <tr>
-            <td>C7</td>
-            <td>Enforce Access Controls</td>
-          </tr>
-          <tr>
-            <td>C8</td>
-            <td>Protect Data Everywhere</td>
-          </tr>
-          <tr>
-            <td>C9</td>
-            <td>Implement Security Logging and Monitoring</td>
-          </tr>
-          <tr>
-            <td>C10</td>
-            <td>Handle All Errors and Exceptions</td>
-          </tr>
-        </table>
-      </div>
-      <div class="col-sm-12 col-md-3">
         <h3>WSTG</h3>
         <table>
           <tr>
@@ -644,6 +599,51 @@
           <tr>
             <td>4.12</td>
             <td>API Testing</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <h3>Proactive Controls</h3>
+        <table>
+          <tr>
+            <td>C1</td>
+            <td>Define Security Requirements</td>
+          </tr>
+          <tr>
+            <td>C2</td>
+            <td>Leverage Security Frameworks and Libraries</td>
+          </tr>
+          <tr>
+            <td>C3</td>
+            <td>Secure Database Access</td>
+          </tr>
+          <tr>
+            <td>C4</td>
+            <td>Encode and Escape Data</td>
+          </tr>
+          <tr>
+            <td>C5</td>
+            <td>Validate All Inputs</td>
+          </tr>
+          <tr>
+            <td>C6</td>
+            <td>Implement Digital Identity</td>
+          </tr>
+          <tr>
+            <td>C7</td>
+            <td>Enforce Access Controls</td>
+          </tr>
+          <tr>
+            <td>C8</td>
+            <td>Protect Data Everywhere</td>
+          </tr>
+          <tr>
+            <td>C9</td>
+            <td>Implement Security Logging and Monitoring</td>
+          </tr>
+          <tr>
+            <td>C10</td>
+            <td>Handle All Errors and Exceptions</td>
           </tr>
         </table>
       </div>
