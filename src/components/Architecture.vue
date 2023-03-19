@@ -420,7 +420,7 @@ if(n &lt; 1 || n &gt; 7) // Correct
     <h2>Architecture Patterns</h2>
 
     <div class="row">
-      <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12 col-md-4">
         <h3>Pattern Types</h3>
         <table>
           <tr>
@@ -490,52 +490,125 @@ if(n &lt; 1 || n &gt; 7) // Correct
         </table>
       </div>
 
-      <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12 col-md-8">
         <h3>Design Patterns</h3>
         <table>
           <tr>
             <td>Creational</td>
-            <td>
-              <ul>
-                <li>Simple Factory</li>
-                <li>Factory Method</li>
-                <li>Abstract Factory</li>
-                <li>Builder</li>
-                <li>Prototype</li>
-                <li>Singleton</li>
-              </ul>
-            </td>
+            <td>Simple Factory</td>
+            <td>Put duplicated new instances on a function to avoid duplication.</td>
           </tr>
+          <tr>
+            <td></td>
+            <td>Factory Method</td>
+            <td>Put duplicated new instances on a class method to avoid duplication.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Abstract Factory</td>
+            <td>Put duplicated new instances on an abstract class method to avoid duplication.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Builder</td>
+            <td>Put each building step as a class method. Build instantiating the class an calling a main method.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Prototype</td>
+            <td>Clone an object via an abstract class Prototype, method clone().</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Singleton</td>
+            <td>Avoid many instances of a class via a getInstance().</td>
+          </tr>
+
           <tr>
             <td>Structural</td>
-            <td>
-              <ul>
-                <li>Adapter</li>
-                <li>Bridge</li>
-                <li>Composite</li>
-                <li>Decorator</li>
-                <li>Facade</li>
-                <li>Flyweight</li>
-                <li>Proxy</li>
-              </ul>
-            </td>
+            <td>Adapter</td>
+            <td>Connect two classes via an interface.</td>
           </tr>
           <tr>
+            <td></td>
+            <td>Bridge</td>
+            <td>Combinable properties of a class end up having several extended classes.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Composite</td>
+            <td>Directories are composites; files are leafs.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Decorator</td>
+            <td>When classes work together and can be combined. Like clothes.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Facade</td>
+            <td>Access many subsystems through a single class named Facade.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Flyweight</td>
+            <td>When the problem is insufficient amount of RAM.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Proxy</td>
+            <td>A class guard that control access to further classes.</td>
+          </tr>
+
+          <tr>
             <td>Behavioral</td>
-            <td>
-              <ul>
-                <li>Chain of Responsibility</li>
-                <li>Command</li>
-                <li>Iterator</li>
-                <li>Mediator</li>
-                <li>Memento</li>
-                <li>Observer</li>
-                <li>State</li>
-                <li>Strategy</li>
-                <li>Template Method</li>
-                <li>Visitor</li>
-              </ul>
-            </td>
+            <td>Chain of Responsibility</td>
+            <td>Several classes extends from an abstract setNext() and have the same handle(). Usage with loops.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Command</td>
+            <td>Execute and undo. Calculator.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Iterator</td>
+            <td>Loop as class. Methods current(), next(), and hasNext().</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Mediator</td>
+            <td>Airplanes and air traffic control.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Memento</td>
+            <td>Create snapshots.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Observer</td>
+            <td>Pub/Sub pattern having publishers and subscribers/listeners.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>State</td>
+            <td>On action, update a state that will affect other action behaviors.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Strategy</td>
+            <td>A Context class can have several Service classes to use and a shared method among them.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Template Method</td>
+            <td>A Process class uses several Step classes. The whole process runs on Process.start().</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Visitor</td>
+            <td>Different Visitors behave differently depending on the Place.</td>
           </tr>
         </table>
       </div>
