@@ -157,6 +157,7 @@ a.link {
 
   &__nav {
     display: flex;
+    flex-wrap: wrap;
 
     &-option {
       flex-grow: 1;
@@ -165,6 +166,7 @@ a.link {
       font-size: 25px;
       text-decoration: none;
       color: var(--color_pink50);
+      padding: 0 10px;
     }
   }
 }
