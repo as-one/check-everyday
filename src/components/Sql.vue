@@ -120,7 +120,7 @@ SELECT * FROM Persons
 ORDER BY LastName
         </pre>
 
-        <h5>ASC</h5>
+        <h5>ASC (default)</h5>
         <pre class="pre">
 SELECT Company, OrderNumber FROM Orders
 ORDER BY Company DESC, OrderNumber ASC

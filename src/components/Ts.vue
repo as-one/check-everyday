@@ -126,8 +126,8 @@ addFromObject({ x: 1, y: 2 }); // 3
           </div>
         </div>
         <pre class="pre">
-let varNull: null = null;     // useless
-let varUndefined: undefined;  // useless
+const varNull: null = null;     // useless
+const varUndefined: undefined;  // useless
         </pre>
 
         <div class="row">

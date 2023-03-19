@@ -62,7 +62,7 @@ if () {
 } else {
 }
 
-let name = conditional ? true : false;
+const name = conditional ? true : false;
             </pre>
 
             <h4>Logical Operators</h4>
@@ -78,8 +78,8 @@ let name = conditional ? true : false;
             <h4>Functions</h4>
             <pre class="pre">
 function name() {}
-let name = function() {}
-let name = () =&gt; {}       // arrow function
+const name = function() {}
+const name = () =&gt; {}       // arrow function
             </pre>
           </div>
 
@@ -108,7 +108,7 @@ for (let i = 0; i &lt; length; i++) {
 
 [1,2,3].map(el => {})        // new map
 [1,2,3].reduce((prev,next) => prev+next, 10) // 16
-[1,2,3].find(el => el > 1)   // 2
+[1,2,3].find(el => el > 1)   // 2 // first
 [1,2,3].filter(el => el > 1) // [2, 3]
 [1,2,3].every(el => el > 1)  // false
 [1,2,3].some(el => el > 1)   // true
@@ -208,7 +208,7 @@ delete obj.k1                # D # delete key
 
             <h4>Date</h4>
             <pre class="pre">
-let date = new Date();
+const date = new Date();
             </pre>
           </div>
         </div>
@@ -236,13 +236,13 @@ runPromise().then(console.log);
             <h4>async/await</h4>
             <pre class="pre">
 async function runNewPromise() {
-  let promise = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('runNewPromise');
     }, 2000);
 })
 
-  let response = await promise;
+  const response = await promise;
   console.log(response);
 }
 runNewPromise();
@@ -263,7 +263,7 @@ await (new Promise((res) => res("ok"))) // ok
         <div class="row">
           <div class="col-sm-12">
             <pre class="pre">
-let parent = document.querySelector('.parent'),       // get parent
+const parent = document.querySelector('.parent'),       // get parent
 els = document.querySelectorAll('.parent .el'),       // get all children
 el = document.querySelector('.parent .el'),           // get one child
 newEl = document.createElement('div');                // create element
@@ -444,7 +444,7 @@ D: localStorage.removeItem('key')
           <div class="col-sm-12">
             <h4>Extra functions</h4>
             <pre class="pre">
-let fetchData = fetch(url, options);            // Fetching
+const fetchData = fetch(url, options);          // Fetching
 JSON.stringify({});                             // JSON to string
 JSON.parse('string');                           // JSON string to object
 el.slice(0, 5);                                 // slice
