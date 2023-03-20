@@ -158,7 +158,7 @@ array_search('a', ['a','b','c']); # 0
         <div class="row">
           <div class="col-sm-12">
             <h4>Coding Style</h4>
-            <a class="link" target="_blank" href="https://www.php-fig.org/psr/psr-12/">PSR 12</a>
+            <a class="link" target="_blank" href="https://www.php-fig.org/psr/psr-12/">PSR 12 - Extended Coding Guide Style</a>
 
             <h4>Comments</h4>
             <pre class="pre">
@@ -204,6 +204,7 @@ $machine->report();
         <h4>Modules</h4>
         <div class="row">
           <div class="col-sm-12">
+            <a class="link" target="_blank" href="https://www.php-fig.org/psr/psr-4/">PSR-4: Autoloader</a>
             <pre class="pre">
 namespace App\Http\Controllers\Api;
 use App\Team;
@@ -231,7 +232,7 @@ function checkNum($number) {
         <h5>3. Handle exception</h5>
         <pre class="pre">
 try {
-  checkNum(10)
+  checkNum(10);
 } catch (Exception $e) {
   print_r($e);
 } finally {
