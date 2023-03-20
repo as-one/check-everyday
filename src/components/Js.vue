@@ -46,7 +46,7 @@ Boolean()   // to boolean
 &gt;=
 !=    // different
 &amp;&amp;    // and
-|     // or
+||    // or
             </pre>
 
         <h4>Conditional</h4>
