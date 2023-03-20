@@ -168,7 +168,7 @@ export default Logo;
             <h4>Array</h4>
             <h5>CRUD</h5>
             <pre class="pre">
-const arr = ["one", "two"];  # C
+const arr = ["one", "two"]   # C
 arr[0]                       # R # get value
 arr.indexOf('one')           # R # get key
 arr.unshift('three')         # U # add el as first
@@ -183,9 +183,9 @@ arr.filter(el => el !== val) # D
             <h4>Objects</h4>
             <h5>CRUD</h5>
             <pre class="pre">
-const obj = {k1: "k1"};      # C
+const obj = {k1: "k1"}       # C
 obj.k1                       # R # get value
-obj.k1 = 'new';              # U # update val
+obj.k1 = 'new'               # U # update val
 obj.k2 = 'k2'                # U # new el
 delete obj.k1                # D # delete key
             </pre>
@@ -240,7 +240,7 @@ async function runNewPromise() {
 runNewPromise();
 
 // shortest Promise ever
-await (new Promise((res) => res("ok"))) // ok
+await (new Promise((res) => res("ok"))); // ok
             </pre>
           </div>
         </div>
