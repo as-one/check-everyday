@@ -2,61 +2,55 @@
   <div class="container content">
     <h2>Basics</h2>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <h3>Fundamentals</h3>
-      </div>
-    </div>
+    <h3>Fundamentals</h3>
 
     <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <div class="col-sm-12 col-md-4">
-            <h4>Developer Console</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>Developer Console</h4>
+        <pre class="pre">
 Command + Option + I
 console.log();
 debugger;
 alert();
             </pre>
 
-            <h4>Variables</h4>
-            <pre class="pre">
+        <h4>Variables</h4>
+        <pre class="pre">
 const
 let   // block scope
 var   // function scope
             </pre>
 
-            <h4>Data Types</h4>
-            <pre class="pre">
+        <h4>Data Types</h4>
+        <pre class="pre">
 string    // "" '' ``
 number
-boolean   // true || false
+boolean   // true | false
 array     // []
 object    // {}
             </pre>
 
-            <h4>Type Conversions</h4>
-            <pre class="pre">
+        <h4>Type Conversions</h4>
+        <pre class="pre">
 Number()    // to number
 String()    // to string
 Boolean()   // to boolean
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Comparisons</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>Comparisons</h4>
+        <pre class="pre">
 ==
 &lt;=
 &gt;=
 !=    // different
 &amp;&amp;    // and
-||    // or
+|     // or
             </pre>
 
-            <h4>Conditional</h4>
-            <pre class="pre">
+        <h4>Conditional</h4>
+        <pre class="pre">
 if () {
 } else if () {
 } else {
@@ -65,8 +59,8 @@ if () {
 const name = conditional ? true : false;
             </pre>
 
-            <h4>Logical Operators</h4>
-            <pre class="pre">
+        <h4>Logical Operators</h4>
+        <pre class="pre">
 +
 -
 *	// multiplication
@@ -75,17 +69,17 @@ const name = conditional ? true : false;
 --	// -1
             </pre>
 
-            <h4>Functions</h4>
-            <pre class="pre">
+        <h4>Functions</h4>
+        <pre class="pre">
 function name() {}
 const name = function() {}
 const name = () =&gt; {}       // arrow function
             </pre>
-          </div>
+      </div>
 
-          <div class="col-sm-12 col-md-4">
-            <h4>Loop</h4>
-            <pre class="pre">
+      <div class="col-sm-12 col-md-4">
+        <h4>Loop</h4>
+        <pre class="pre">
 switch {
   case 1:
     break;
@@ -100,8 +94,8 @@ for (let i = 0; i &lt; length; i++) {
 }
             </pre>
 
-            <h4>Loop Arrays</h4>
-            <pre>
+        <h4>Loop Arrays</h4>
+        <pre>
 [1,2,3].forEach((el, i) =&gt; {
   console.log(el, i);
 });
@@ -114,18 +108,16 @@ for (let i = 0; i &lt; length; i++) {
 [1,2,3].some(el => el > 1)   // true
 [1,2,3].indexOf(1)           // 0
             </pre>
-            <a target="_blank" href="https://www.w3schools.com/js/js_array_iteration.asp">W3Schools' JS Array Iteration</a>
+        <a target="_blank" href="https://www.w3schools.com/js/js_array_iteration.asp">W3Schools' JS Array Iteration</a>
 
-            <h4>Loop Objects</h4>
-            <pre>
+        <h4>Loop Objects</h4>
+        <pre>
 const obj = {a: 1, b: 2, c: 3};
 for (let o in obj) {
     const key = o; // a, b, c
     const value = obj[o]; // 1, 2, 3
 }
             </pre>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -153,7 +145,7 @@ Block
 class Example {
   // 1. let const
   // 2. functions
-  // 3. render() || init()
+  // 3. render() | init()
 }
             </pre>
 
@@ -260,34 +252,24 @@ await (new Promise((res) => res("ok"))) // ok
     <div class="row">
       <div class="col-sm-12 col-lg-6">
         <h3>Parent &amp; Children</h3>
-        <div class="row">
-          <div class="col-sm-12">
-            <pre class="pre">
+        <pre class="pre">
 const parent = document.querySelector('.parent'),       // get parent
 els = document.querySelectorAll('.parent .el'),       // get all children
 el = document.querySelector('.parent .el'),           // get one child
 newEl = document.createElement('div');                // create element
-            </pre>
-          </div>
-        </div>
+        </pre>
 
         <h3>Events</h3>
-        <div class="row">
-          <div class="col-sm-12">
-            <pre class="pre">
+        <pre class="pre">
 document.addEventListener('DOMContentLoaded', () =&gt; {});  // ready
 el.addEventListener('click', () =&gt; {});                   // on
 el.removeEventListener();                                 // off Check MDN
 window.addEventListener("resize", () =&gt; {});              // on resize
-            </pre>
-          </div>
-        </div>
+        </pre>
 
         <h3>Elements</h3>
-        <div class="row">
-          <div class="col-sm-12">
-            <h4>Create</h4>
-            <pre class="pre">
+        <h4>Create</h4>
+        <pre class="pre">
 document.createElement('div');                  // create
 el.cloneNode(true|false);                       // clone
 el.before(newEl);                               // prev sibling / before()
@@ -298,8 +280,8 @@ el.replaceWith(newEl);                          // replace all
 // el.insertAdjacentHTML('', newEl);            // Check MDN
             </pre>
 
-            <h4>Retrieve</h4>
-            <pre class="pre">
+        <h4>Retrieve</h4>
+        <pre class="pre">
 document.querySelector('.className');           // get element
 document.querySelectorAll('.className');        // get elements
 el.querySelectorAll('.className');              // get children by selector
@@ -315,28 +297,25 @@ el.nextElementSibling;                          // get next sibling
 el.forEach((item, index, array) =&gt; {});         // foreach (Array)
             </pre>
 
-            <h4>Delete</h4>
-            <pre class="pre">
+        <h4>Delete</h4>
+        <pre class="pre">
 el.remove();                                    // remove itself
 el.innerHTML = '';                              // remove content
-            </pre>
-          </div>
-        </div>
+        </pre>
       </div>
       <div class="col-sm-12 col-lg-6">
         <h3>Attributes</h3>
-        <div class="row">
-          <div class="col-sm-12">
-            <h4>Class</h4>
-            <pre class="pre">
+
+        <h4>Class</h4>
+        <pre class="pre">
 el.className;                                   // get class name
 el.classList.add('className');                  // add class
 el.classList.remove('className');               // remove class
 el.classList.toggle('className');               // toggle class
             </pre>
 
-            <h4>Style</h4>
-            <pre class="pre">
+        <h4>Style</h4>
+        <pre class="pre">
 getComputedStyle(el)['width'];                  // get any style post-rendering
 
 el.style.borderWidth = '10px';                  // set style
@@ -347,8 +326,8 @@ el.getAttribute('attr');                        // get attributes
 el.removeAttribute('attr');                     // remove attributes
             </pre>
 
-            <h4>Position, width, and height</h4>
-            <pre class="pre">
+        <h4>Position, width, and height</h4>
+        <pre class="pre">
 el.getBoundingClientRect();                     // get all positions
 el.offsetTop; el.offsetLeft;                    // get position top and left
 
@@ -365,8 +344,8 @@ document.body.clientWidth;                      // window width (for resizing)
 document.body.clientHeight;                     // window height
             </pre>
 
-            <h4>Content</h4>
-            <pre class="pre">
+        <h4>Content</h4>
+        <pre class="pre">
 el.outerHTML = '&lt;div&gt;&lt;/&lt;div&gt;';                  // set HTML
 el.outerHTML;                                   // get HTML
 
@@ -374,16 +353,14 @@ el.innerHTML = 'Content';                       // set content of HTML
 el.innerHTML;                                   // get content of HTML
             </pre>
 
-            <h4>Returns boolean</h4>
-            <pre class="pre">
+        <h4>Returns boolean</h4>
+        <pre class="pre">
 el.classList.contains('className');             // has class
 el.filter(() =&gt; {});                            // filter
 el !== child &amp;&amp; el.contains(child);             // contains
 !!newMe.querySelector('.className');            // contains selector
 el === newEl;                                   // matches
-            </pre>
-          </div>
-        </div>
+        </pre>
       </div>
     </div>
 
@@ -416,34 +393,30 @@ Form: focus, blur, change
     <div class="row">
       <div class="col-sm-12 col-lg-6">
         <h3>Storing data</h3>
-        <div class="row">
-          <div class="col-sm-12">
-            <h4>Cookie - Older approach</h4>
-            <pre class="pre">
+
+        <h4>Cookie - Older approach</h4>
+        <pre class="pre">
 C: setCookie(key, value)
 R: getCookie(key)
 U: setCookie(key, value)
 D: deleteCookie(key)
             </pre>
-            <a target="_blank" href="https://javascript.info/cookie">JS Info Cookie's Functions</a>
+        <a target="_blank" href="https://javascript.info/cookie">JS Info Cookie's Functions</a>
 
-            <h4>Local Storage - Newer approach</h4>
-            <pre class="pre">
+        <h4>Local Storage - Newer approach</h4>
+        <pre class="pre">
 C: localStorage.setItem('key', 'value')
 R: localStorage.getItem('key')
 U: localStorage.setItem('key', 'value')
 D: localStorage.removeItem('key')
             </pre>
-          </div>
-        </div>
       </div>
 
       <div class="col-sm-12 col-lg-6">
         <h3>Misc</h3>
-        <div class="row">
-          <div class="col-sm-12">
-            <h4>Extra functions</h4>
-            <pre class="pre">
+
+        <h4>Extra functions</h4>
+        <pre class="pre">
 const fetchData = fetch(url, options);          // Fetching
 JSON.stringify({});                             // JSON to string
 JSON.parse('string');                           // JSON string to object
@@ -458,14 +431,14 @@ Math.ceil(Math.random() * 10);                  // random between 0 and 10
 el.style.display = 'block';                     // show tag
 el.style.display = 'none';                      // hide tag</pre>
 
-            <h4>Truthy/Falsey</h4>
-            <table>
-              <tr>
-                <td>Truthy</td>
-                <td>Falsey</td>
-              </tr>
-              <tr>
-                <td>
+        <h4>Truthy/Falsey</h4>
+        <table>
+          <tr>
+            <td>Truthy</td>
+            <td>Falsey</td>
+          </tr>
+          <tr>
+            <td>
                   <pre class="pre">
 if (true)
 if ({})
@@ -476,8 +449,8 @@ if ("false")
 if (new Date())
 if (-42)
 if (12n)</pre>
-                </td>
-                <td>
+            </td>
+            <td>
                   <pre class="pre">
 if (false)
 if (null)
@@ -487,11 +460,9 @@ if (-0)
 if (0n)
 if (NaN)
 if ("")</pre>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
+            </td>
+          </tr>
+        </table>
       </div>
 
       <h2>Fetching</h2>
@@ -511,7 +482,7 @@ const fetchCatData = async () => {
 }
 
 fetchCatData();
-            </pre>
+        </pre>
       </div>
 
       <div class="col-sm-12 col-lg-6">
@@ -553,7 +524,7 @@ const destroy = (values) => {
     data: { email }
   });
 };
-          </pre>
+        </pre>
       </div>
     </div>
   </div>

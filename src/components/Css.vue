@@ -158,7 +158,7 @@
             <ul>
               <li><strong>display: flex;</strong></li>
               <li><strong>flex-direction</strong>: row | column</li>
-              <li><strong>flex-wrap</strong>: nowrap || wrap; // nowrap disregard width.</li>
+              <li><strong>flex-wrap</strong>: nowrap | wrap; // nowrap disregard width.</li>
               <li>flex-flow: flex-direction + flex-wrap</li>
               <li><strong>justify-content</strong>:; x axis</li>
               <li><strong>align-content</strong>:; y axis</li>
@@ -220,7 +220,7 @@
 
         <h3>Float</h3>
         <ul>
-          <li><strong>float: left || right;</strong></li>
+          <li><strong>float: left | right;</strong></li>
         </ul>
 
         <h3>Centering</h3>
@@ -279,17 +279,17 @@
         <h3>Typography</h3>
         <ul>
           <li><strong>font-style: italic;</strong></li>
-          <li><strong>font-weight</strong>: bold || number from 100 to 900</li>
+          <li><strong>font-weight</strong>: bold | number from 100 to 900</li>
           <li><strong>font-size</strong>: 10px;</li>
           <li><strong>line-height</strong>: 5px; // font's container</li>
           <li>
             <strong>font-family</strong>: <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> &&
-            sans-serif || serif;
+            sans-serif | serif;
           </li>
           <li><strong>color</strong>: #000000;</li>
-          <li><strong>text-align</strong>: left || right || center || justify;</li>
-          <li><strong>text-decoration</strong>: underline || none;</li>
-          <li><strong>text-transform</strong>: uppercase || lowercase;</li>
+          <li><strong>text-align</strong>: left | right | center | justify;</li>
+          <li><strong>text-decoration</strong>: underline | none;</li>
+          <li><strong>text-transform</strong>: uppercase | lowercase;</li>
           <li>
             <strong>text-shadow</strong>:
             <a href="https://css3gen.com/text-shadow/" target="_blank">Text Shadow tool</a> // copy & paste
@@ -309,10 +309,10 @@
 
         <h3>Backgrounds</h3>
         <ul>
-          <li><strong>background-image:</strong> url(./folder/file.jpg || png || svg);</li>
+          <li><strong>background-image:</strong> url(./folder/file.jpg | png | svg);</li>
           <li><strong>background-color:</strong> blue;</li>
           <li><strong>background-position:</strong> top center;</li>
-          <li><strong>background-size:</strong> 10px 20px || auto || contain || cover;</li>
+          <li><strong>background-size:</strong> 10px 20px | auto | contain | cover;</li>
           <li><strong>background-repeat: no-repeat</strong>;</li>
           <li>background-origin</li>
           <li>background-clip</li>

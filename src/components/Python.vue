@@ -26,7 +26,7 @@ type()  # get type
 string  # "" ''
 int     # 10
 float   # 10.5
-bool    # True || False
+bool    # True | False
 list    # [1, 2] ordered, changeable, dupli
 dict    # {'k1': 1} ordered, changeable, no dupli
 tuple   # (1, 2) ordered, unchangeable, dupli
@@ -417,7 +417,5 @@ sub # The row in Spow
         </div>
       </div>
     </div>
-
-
   </div>
 </template>
