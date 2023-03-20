@@ -124,7 +124,7 @@ a.link {
     margin: 40px auto 60px;
 
     &-link {
-      display: flex;
+      display: initial;
       width: 100%;
       text-decoration: none;
     }
@@ -219,5 +219,8 @@ a.link {
 @media (min-width: 768px) {
   .header {
     margin-bottom: 50px;
+    &__top-link {
+      display: flex;
+    }
   }
 }
