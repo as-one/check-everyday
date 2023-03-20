@@ -286,7 +286,7 @@ rand(0, 10)        # random number
             <h4>String</h4>
             <pre class="pre">
 "Hello" . "World"          # Hello World
-"My name is {$name}"       # f-String
+"My name is {$name}"       # "f-String"
 trim(" string ")           # string # trimming
 str_split("string")        # ['s', 't', 'r']
 str_replace('r','a',"str") # sta
@@ -309,7 +309,6 @@ strtoupper("lower")        # LOWER
 $now = date("Y-m-d H:i:s");
 $date = date("Y-m-d h:i:sa", strtotime("10:30pm April 15 2020"));
             </pre>
-            <a class="link" target="_blank" href="https://www.w3schools.com/python/python_datetime.asp">Date Format</a>
 
             <h4>JSON</h4>
             <pre class="pre">
