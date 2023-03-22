@@ -13,8 +13,8 @@ const app = createApp(App);
 app.use(createPinia());
 app.use(router);
 
-createApp(App).use(VueGtag, {
-    config: { id: "G-QNPED591KP" }
+app.use(VueGtag, {
+    config: { id: import.meta.env.VITE_GA_MEASUREMENT_ID }
 }, router);
 
 app.mount("#app");

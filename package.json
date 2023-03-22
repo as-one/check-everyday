@@ -13,6 +13,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-gtag": "^2.0.1",
