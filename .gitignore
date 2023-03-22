@@ -28,4 +28,6 @@ coverage
 *.sw?
 
 .env
+.env.local
+.evv.development
 .env.*
