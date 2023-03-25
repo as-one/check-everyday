@@ -4,31 +4,41 @@
 
     <div class="row">
       <div class="col-sm-12 col-md-4">
-        <h3>Props</h3>
-        <h4>Function and Class component</h4>
+        <h3>Components</h3>
+
+        <h4>Props</h4>
         <pre class="pre">
-&lt;Welcome name="Julie" role="developer" />
-
-// OR
-
+&lt;Welcome name="Julie" />
 &lt;Welcome {...props} />
+        </pre>
 
+        <h4>Component as Function</h4>
+        <pre class="pre">
+function Welcome(props) {
+  return (
+    &lt;h1>Hello, {props.name}&lt;/h1>
+  );
+}
+        </pre>
+
+        <h4>Component as Class</h4>
+        <pre class="pre">
 class Welcome extends React.Component {
-  return &lt;h1>Hello, {props.name}, {props.role}&lt;/h1>;
-
-  // OR
-
   render() {
-    return &lt;h1>Hello, {this.props.name}, {this.props.role}&lt;/h1>;
+    return &lt;h1>Hello, {this.props.name}&lt;/h1>;
   }
 }
+         </pre>
 
-// OR
-
-export function Welcome(props) {
-  return (
-    &lt;h1>Hello, {props.name}, {props.role}&lt;/h1>
-  );
+         <h4>Component as Class with TypeScript</h4>
+         <pre class="pre">
+type Props = { name: string };
+type State = { count: number };
+class Welcome extends React.Component&lt;Props, State> {
+  public state: State = { count: 0 }
+  render() {
+    return &lt;h1>Hello, {this.props.name}&lt;/h1>;
+  }
 }
          </pre>
       </div>
