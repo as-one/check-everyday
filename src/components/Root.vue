@@ -4,11 +4,11 @@
     <div class="about-us">
       <div class="about-us__profiles">
         <a class="about-us__profile" href="https://asone.studio/about-us" target="_blank">
-          <img class="about-us__profile-photo" src="src/assets/about-us__cesar.jpg" alt="Cesar Kohl">
+          <img class="about-us__profile-photo" src="/src/assets/about-us__cesar.jpg" alt="Cesar Kohl">
           <p class="about-us__profile-subtitle">Cesar Kohl</p>
         </a>
         <a class="about-us__profile" href="https://asone.studio/about-us" target="_blank">
-          <img class="about-us__profile-photo" src="src/assets/about-us__julie.jpg" alt="Julie Kohl">
+          <img class="about-us__profile-photo" src="/src/assets/about-us__julie.jpg" alt="Julie Kohl">
           <p class="about-us__profile-subtitle">Julie Kohl</p>
         </a>
       </div>
