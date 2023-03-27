@@ -35,8 +35,9 @@ import { RouterLink, RouterView } from "vue-router";
     </div>
   </header>
 
+  <RouterView />
+
   <footer class="footer">
     <a class="footer__link" href="https://asone.studio" target="_blank">developed by As One</a>
   </footer>
-  <RouterView />
 </template>
