@@ -1,25 +1,25 @@
 <template>
   <section class="container content">
-    <h1 class="welcome">Hello! Click on the language you want to review.</h1>
-    <div class=aboutUs__headline>
-      <div class=aboutUs__headlineProfiles>
-        <div class="aboutUs__block">
-          <img class="aboutUs__block_border--img" src="src/assets/about-us__cesar.jpg" alt="cesar">
-          <p class="aboutUs__block_border--subtitle">Cesar Kohl</p>
-        </div>
-        <div class="aboutUs__block">
-          <img class="aboutUs__block_border--img" src="src/assets/about-us__julie.jpg" alt="julie">
-          <p class="aboutUs__block_border--subtitle">Julie Kohl</p>
-        </div>
+    <h1 class="welcome">Hello world! Click on the language you want to review.</h1>
+    <div class="about-us">
+      <div class="about-us__profiles">
+        <a class="about-us__profile" href="https://asone.studio/about-us" target="_blank">
+          <img class="about-us__profile-photo" src="src/assets/about-us__cesar--pixelated.jpg" alt="Cesar Kohl">
+          <p class="about-us__profile-subtitle">Cesar Kohl</p>
+        </a>
+        <a class="about-us__profile" href="https://asone.studio/about-us" target="_blank">
+          <img class="about-us__profile-photo" src="src/assets/about-us__julie--pixelated.jpg" alt="Julie Kohl">
+          <p class="about-us__profile-subtitle">Julie Kohl</p>
+        </a>
       </div>
-      <div>
-        <h2>About us</h2>
-        <h3>We are a couple of developers who value accessible, fast, beautiful, and innovative tech.</h3>
-        <p>
-          We are a couple of developers who love technology and the challenge of building something new, beautiful, functional, and that fits perfectly the needs of each project.<br>
-          We have over 10 years of experience counting dozens of satisfied clients. Our greatest achievement so far is having initiated a startup, making it profitable and selling it to a bigger player.<br>
-          We value accessible, fast, beautiful, and innovative websites. We are committed to work closely with our clients meeting agreed deadlines.
+      <div class="about-us__description">
+        <h3 class="about-us__description-heading">What is Check Everyday?</h3>
+        <p class="about-us__description-text">
+          This is the list of the topics that must be at our fingertips for us to remain productive independently of
+          how much we know.
         </p>
+        <p>We have been working with all these technologies for 10+ years and we are incorporating AppSec into our routine.</p>
+        <p>So yes, we check it everyday!</p>
       </div>
     </div>
   </section>
