@@ -265,6 +265,21 @@ onMounted(() => {
 });
 < /script>
   `,
+  compositionApiSlots: `
+< template v-for="(child, index) in slots.default()">
+    < pre>
+        {{index}}
+        {{child}}
+    < /pre>
+    < slot v-if="index === 0"></slot>
+< /template>
+
+< script setup>
+import { useSlots } from 'vue';
+const slots = useSlots();
+console.log(slots.default);
+< /script>
+  `,
   reactivityRef: `
 // Use for scalar types
 
@@ -533,13 +548,18 @@ created() {
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <h3>Template Refs ref=</h3>
-      </div>
       <div class="col-sm-12 col-md-4">
+        <h3>Template Refs ref=</h3>
         <h4>Accessing</h4>
         <pre class="pre">
           {{content.templateRefsAccessing}}
+        </pre>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <h3>Slots</h3>
+        <h4>Composition API</h4>
+        <pre class="pre">
+          {{content.compositionApiSlots}}
         </pre>
       </div>
     </div>

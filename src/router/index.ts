@@ -14,6 +14,7 @@ import Sql from "@/components/Sql.vue";
 import Theory from "@/components/Theory.vue";
 import Ts from "@/components/Ts.vue";
 import Vue from "@/components/Vue.vue";
+import Java from "@/components/Java.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -62,6 +63,11 @@ const router = createRouter({
       path: "/php",
       name: "php",
       component: Php,
+    },
+    {
+      path: "/java",
+      name: "java",
+      component: Java,
     },
     {
       path: "/python",

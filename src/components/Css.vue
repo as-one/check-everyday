@@ -8,7 +8,8 @@
         <ul>
           <li>
             <strong><a href="https://en.bem.info/" target="_blank">BEM</a> - Block Element Modifier</strong>:
-            .block__element_modifier
+            <br />
+            block__element--modifier
           </li>
         </ul>
 
