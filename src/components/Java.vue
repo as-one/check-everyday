@@ -60,7 +60,7 @@ if (1 == 2) {
 } else if (1 == 3) {
 } else {}
 
-$ternary = true ? "is true" : "is false";
+ternary = true ? "is true" : "is false";
             </pre>
 
         <h4>Logical Operators</h4>
@@ -104,7 +104,7 @@ for (int number : numbers) {
 
         <h5>switch</h5>
         <pre>
-switch ($val) {
+switch (int val) {
   case 0: return "zero";
   case 1: return "one";
   default: return "default";
