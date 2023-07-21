@@ -15,6 +15,7 @@ import Theory from "@/components/Theory.vue";
 import Ts from "@/components/Ts.vue";
 import Vue from "@/components/Vue.vue";
 import Java from "@/components/Java.vue";
+import Angular from "@/components/Angular.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,11 @@ const router = createRouter({
       path: "/",
       name: "root",
       component: Root,
+    },
+    {
+      path: "/angular",
+      name: "angular",
+      component: Angular,
     },
     {
       path: "/appsec",
@@ -55,6 +61,11 @@ const router = createRouter({
       component: Html,
     },
     {
+      path: "/java",
+      name: "java",
+      component: Java,
+    },
+    {
       path: "/js",
       name: "js",
       component: Js,
@@ -63,11 +74,6 @@ const router = createRouter({
       path: "/php",
       name: "php",
       component: Php,
-    },
-    {
-      path: "/java",
-      name: "java",
-      component: Java,
     },
     {
       path: "/python",
