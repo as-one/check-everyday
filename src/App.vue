@@ -26,8 +26,8 @@ import { RouterLink, RouterView } from "vue-router";
 
         <RouterLink class="header__nav-option" to="/php">PHP</RouterLink>
         <RouterLink class="header__nav-option" to="/python">Python</RouterLink>
-        <RouterLink class="header__nav-option" to="/java">Java</RouterLink>
-        <RouterLink class="header__nav-option" to="/go">Go</RouterLink>
+<!--        <RouterLink class="header__nav-option" to="/java">Java</RouterLink>-->
+<!--        <RouterLink class="header__nav-option" to="/go">Go</RouterLink>-->
         <RouterLink class="header__nav-option" to="/sql">SQL</RouterLink>
 
         <RouterLink class="header__nav-option" to="/architecture">Arch</RouterLink>

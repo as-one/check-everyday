@@ -28,7 +28,7 @@ double    # 10.5  64-bit
 boolean   # true | false
 array     # int[] nums = {1, 2}
 object    # class MyClass { int age }
-            </pre>
+        </pre>
 
         <h4>Type Conversions</h4>
         <pre class="pre">
